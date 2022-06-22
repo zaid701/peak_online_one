@@ -40,23 +40,29 @@ class _projectattechmentState extends State<projectattechment> {
                 size: 25,
               ),
               Spacer(),
-              Container(
-                height: 17,
-                width: 17,
-                decoration: BoxDecoration(
-                  gradient: colorssl(),
-                  borderRadius: BorderRadius.circular(17),
-                ),
-                child: Center(
-                  child: FittedBox(child: Icon(Icons.add)),
+              InkWell(
+                onTap: () => attechfilealert(),
+                child: Container(
+                  height: 17,
+                  width: 17,
+                  decoration: BoxDecoration(
+                    gradient: colorssl(),
+                    borderRadius: BorderRadius.circular(17),
+                  ),
+                  child: Center(
+                    child: FittedBox(child: Icon(Icons.add)),
+                  ),
                 ),
               ),
               SizedBox(
                 width: 5,
               ),
-              Text(
-                "Add File",
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13),
+              InkWell(
+                onTap: () => attechfilealert(),
+                child: Text(
+                  "Add File",
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13),
+                ),
               ),
 
               SizedBox(
@@ -146,4 +152,91 @@ class _projectattechmentState extends State<projectattechment> {
           ),
         ],
       );
+
+  Future attechfilealert() => showDialog(
+      context: context,
+      builder: (context) => Dialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            elevation: 10,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: InkWell(
+                      onTap: () => Navigator.pop(context),
+                      child: Icon(Icons.close),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Center(
+                    child: Text(
+                      "Add File",
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Title*",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                        hintText: "Please enter title",
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Attach File",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                        suffixIcon: Icon(Icons.attach_file),
+                        hintText: "Upload File",
+                        hintStyle: TextStyle(fontSize: 13),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                        decoration: BoxDecoration(
+                            gradient: colorssl(),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Text("Save")),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
+            ),
+          ));
 }

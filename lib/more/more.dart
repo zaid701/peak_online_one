@@ -39,7 +39,7 @@ class _morepageState extends State<morepage> {
             padding: const EdgeInsets.only(right: 8.0),
             child: InkWell(
                 onTap: (() => pushNewScreen(context,
-                    screen: knowledgeinfo(), withNavBar: true)),
+                    screen: knowledgebased(), withNavBar: true)),
                 child: Icon(Icons.info_outline_rounded)),
           ),
           Padding(

@@ -105,26 +105,26 @@ class _accpageState extends State<accpage> {
       ),
     );
   }
-}
 
-Widget roww11(String title, String sub) => Padding(
-      padding: const EdgeInsets.all(10),
-      child: Row(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              Text(
-                title,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              ),
-              Text(sub)
-            ],
-          ),
-          Spacer(),
-          IconButton(
-              onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleRight))
-        ],
-      ),
-    );
+  Widget roww11(String title, String sub) => Padding(
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                ),
+                Text(sub)
+              ],
+            ),
+            Spacer(),
+            IconButton(
+                onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleRight))
+          ],
+        ),
+      );
+}

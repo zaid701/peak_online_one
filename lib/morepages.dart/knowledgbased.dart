@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:peak_online_one/morepages.dart/knowledgeinfo.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:rounded_expansion_tile/rounded_expansion_tile.dart';
 
 class knowledgebased extends StatefulWidget {
@@ -119,27 +121,30 @@ class _knowledgebasedState extends State<knowledgebased> {
     );
   }
 
-  Widget expansionrow(String title) => Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            SizedBox(
-              width: 30,
-            ),
-            Text(
-              title,
-              style: TextStyle(fontSize: 14),
-            ),
-            Spacer(),
-            FaIcon(
-              FontAwesomeIcons.angleRight,
-              size: 20,
-              color: Colors.grey,
-            ),
-            SizedBox(
-              width: 30,
-            )
-          ],
+  Widget expansionrow(String title) => InkWell(
+    onTap: () => pushNewScreen(context, screen: knowledgeinfo(),withNavBar: true),
+    child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              SizedBox(
+                width: 30,
+              ),
+              Text(
+                title,
+                style: TextStyle(fontSize: 14),
+              ),
+              Spacer(),
+              FaIcon(
+                FontAwesomeIcons.angleRight,
+                size: 20,
+                color: Colors.grey,
+              ),
+              SizedBox(
+                width: 30,
+              )
+            ],
+          ),
         ),
-      );
+  );
 }

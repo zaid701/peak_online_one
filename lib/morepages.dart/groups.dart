@@ -4,6 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:peak_online_one/more/groupdetail.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 import 'accpage.dart';
 
@@ -58,17 +61,45 @@ class _GroupspageState extends State<Groupspage> {
               color: Color(0xFFF7F9FC)),
           child: Column(
             children: [
-              roww11("Group Name", "Team Peak Online"),
+              roww111("Group Name", "Team Peak Online"),
               Divider(),
-              roww11("Group Name", "Team Peak Online"),
+              roww111("Group Name", "Team Peak Online"),
               Divider(),
-              roww11("Group Name", "Team Peak Online"),
+              roww111("Group Name", "Team Peak Online"),
               Divider(),
-              roww11("Group Name", "Team Peak Onlinen"),
+              roww111("Group Name", "Team Peak Onlinen"),
             ],
           ),
         )
       ],
     );
   }
+
+  Widget roww111(String title, String sub) => InkWell(
+        onTap: () =>
+            pushNewScreen(context, screen: groupdetail(), withNavBar: true),
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                // ignore: prefer_const_literals_to_create_immutables
+
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  Text(sub)
+                ],
+              ),
+              Spacer(),
+              IconButton(
+                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleRight))
+            ],
+          ),
+        ),
+      );
 }
