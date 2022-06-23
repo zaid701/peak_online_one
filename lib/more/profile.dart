@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:peak_online_one/main.dart';
 import 'package:peak_online_one/morepages.dart/Renewal.dart';
 import 'package:peak_online_one/morepages.dart/SLA.dart';
 import 'package:peak_online_one/morepages.dart/contact.dart';
@@ -57,19 +58,7 @@ class _profileeState extends State<profilee> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(b[tb.index]),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.info_outline_rounded),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: Icon(Icons.notifications),
-          ),
-        ],
-      ),
+      appBar: appbar2(context, b[tb.index]),
       backgroundColor: Color.fromARGB(255, 242, 241, 241),
       body: Column(
         children: [
@@ -112,7 +101,9 @@ class _profileeState extends State<profilee> with TickerProviderStateMixin {
                 SLCPAGE(),
                 Groupspage(),
                 preference(),
-                notification(pg: pageController,),
+                notification(
+                  pg: pageController,
+                ),
               ],
               controller: pageController,
               onPageChanged: (int i) => setState(() {

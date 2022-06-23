@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:peak_online_one/main.dart';
 
 class securityy extends StatefulWidget {
   const securityy({Key? key}) : super(key: key);
@@ -66,7 +67,7 @@ class _securityyState extends State<securityy> {
                     width: 300,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Colors.blueGrey),
+                        gradient: colorssl()),
                     child: Center(
                         child: Text(
                       "Confirm New Password",

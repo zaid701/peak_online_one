@@ -20,20 +20,7 @@ class _editprojectdetailsState extends State<editprojectdetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
-      appBar: AppBar(
-        title: Text("Projects"),
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.info_outline_rounded),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: Icon(Icons.notifications),
-          ),
-        ],
-      ),
+      appBar: appbar2(context, "Project"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(

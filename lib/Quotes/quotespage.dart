@@ -14,7 +14,8 @@ import 'package:peak_online_one/morepages.dart/notification.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class quotespage extends StatefulWidget {
-  const quotespage({Key? key}) : super(key: key);
+  final PersistentTabController controller;
+  const quotespage({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<quotespage> createState() => _quotespageState();
@@ -25,114 +26,97 @@ class _quotespageState extends State<quotespage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
-      appBar: AppBar(
-        centerTitle: true,
-        title: CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 25,
-          child: SvgPicture.asset(
-            "asset/Group.svg",
-            height: 45,
-          ),
-        ),
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.info_outline_rounded),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: Icon(Icons.notifications),
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 15,
-          ),
-          Row(
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                "Service Quotes",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              Icon(
-                Icons.search,
-              ),
-              Spacer(),
-              InkWell(
-                onTap: () => pushNewScreen(context,
-                    screen: quotehistory(), withNavBar: true),
-                child: CircleAvatar(
-                  child: FaIcon(
-                    FontAwesomeIcons.history,
-                    size: 15,
-                  ),
-                  radius: 12,
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              InkWell(
-                onTap: () => pushNewScreen(context,
-                    screen: createquote(), withNavBar: true),
-                child: CircleAvatar(
-                  backgroundColor: Colors.blueAccent,
-                  child: FaIcon(
-                    FontAwesomeIcons.plus,
-                    size: 15,
-                  ),
-                  radius: 12,
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            decoration: BoxDecoration(
-                color: Color(0xFFF7F9FC),
-                borderRadius: BorderRadius.circular(15)),
-            child: Column(
+      appBar: appbar1(context, widget.controller, "Quotes", false),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              // ignore: prefer_const_literals_to_create_immutables
               children: [
-                Quoterow(),
-                Divider(),
-                Quoterow(),
-                Divider(),
-                Quoterow()
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "Service Quotes",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Icon(
+                  Icons.search,
+                ),
+                Spacer(),
+                InkWell(
+                  onTap: () => pushNewScreen(context,
+                      screen: quotehistory(), withNavBar: true),
+                  child: CircleAvatar(
+                    child: FaIcon(
+                      FontAwesomeIcons.history,
+                      size: 15,
+                    ),
+                    radius: 12,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                InkWell(
+                  onTap: () => pushNewScreen(context,
+                      screen: createquote(), withNavBar: true),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.blueAccent,
+                    child: FaIcon(
+                      FontAwesomeIcons.plus,
+                      size: 15,
+                    ),
+                    radius: 12,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
               ],
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleLeft)),
-              Text("1"),
-              IconButton(
-                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleRight)),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          )
-        ],
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              decoration: BoxDecoration(
+                  color: Color(0xFFF7F9FC),
+                  borderRadius: BorderRadius.circular(15)),
+              child: Column(
+                children: [
+                  Quoterow(),
+                  Divider(),
+                  Quoterow(),
+                  Divider(),
+                  Quoterow()
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                    onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleLeft)),
+                Text("1"),
+                IconButton(
+                    onPressed: () {},
+                    icon: FaIcon(FontAwesomeIcons.angleRight)),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            )
+          ],
+        ),
       ),
     );
   }

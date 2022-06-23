@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,7 +12,8 @@ import 'package:peak_online_one/morepages.dart/knowledgeinfo.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class morepage extends StatefulWidget {
-  const morepage({Key? key}) : super(key: key);
+  final PersistentTabController controller;
+  const morepage({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<morepage> createState() => _morepageState();
@@ -23,34 +24,7 @@ class _morepageState extends State<morepage> {
   Widget build(BuildContext context) {
     ScrollController _scrollController = ScrollController();
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 25,
-          child: SvgPicture.asset(
-            "asset/Group.svg",
-            height: 45,
-          ),
-        ),
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: InkWell(
-                onTap: (() => pushNewScreen(context,
-                    screen: knowledgebased(), withNavBar: true)),
-                child: Icon(Icons.info_outline_rounded)),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: InkWell(
-                onTap: (() => pushNewScreen(context,
-                    screen: allnotification(), withNavBar: true)),
-                child: Icon(Icons.notifications)),
-          ),
-        ],
-      ),
+      appBar: appbar1(context, widget.controller, "More", true),
       backgroundColor: Color(0xffE5E5E5),
       body: OrientationBuilder(
         builder: (context, orientation) => Container(
@@ -143,7 +117,7 @@ class _morepageState extends State<morepage> {
                     ),
                   ),
                   GridView.count(
-                    crossAxisCount: orientation == Orientation.portrait ? 2 : 4,
+                    crossAxisCount: orientation == Orientation.portrait ? 2 : 5,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                     childAspectRatio: 3 / 1.5,
@@ -214,7 +188,10 @@ class _morepageState extends State<morepage> {
           children: [
             Row(
               children: [
-                i,
+                ShaderMask(
+                    shaderCallback: (bounds) => colorssl().createShader(bounds),
+                    blendMode: BlendMode.srcATop,
+                    child: i),
                 Spacer(),
                 CircleAvatar(
                   backgroundColor: Colors.green.shade900,

@@ -1,12 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:peak_online_one/Signin.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 void main() {
   runApp(const MyApp());
 }
-   
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -51,4 +53,71 @@ LinearGradient colorssl() => LinearGradient(
       //tileMode: TileMode.decal,
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
+    );
+AppBar appbar1(BuildContext context, PersistentTabController controller,
+        String title, bool avtar) =>
+    AppBar(
+      leadingWidth: MediaQuery.of(context).size.width * 0.5,
+      leading: Row(
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.02,
+          ),
+          InkWell(
+              onTap: () => controller.jumpToTab(0),
+              child: Icon(Icons.arrow_back)),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.02,
+          ),
+          Text(
+            title,
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: MediaQuery.of(context).size.width * 0.05),
+          )
+        ],
+      ),
+      centerTitle: avtar,
+      backgroundColor: Color(0xff95BB65),
+      title: avtar
+          ? CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 25,
+              child: SvgPicture.asset(
+                "asset/Group.svg",
+                height: 45,
+              ),
+            )
+          : null,
+      // ignore: prefer_const_literals_to_create_immutables
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: Icon(Icons.info_outline_rounded),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0, left: 8),
+          child: Icon(Icons.notifications),
+        ),
+      ],
+    );
+
+AppBar appbar2(BuildContext context, String title) => AppBar(
+      backgroundColor: Color(0xff95BB65),
+      //leadingWidth: MediaQuery.of(context).size.width * 0.1,
+      leading: InkWell(
+          onTap: () => Navigator.pop(context), child: Icon(Icons.arrow_back)),
+      title: Text(title),
+      // ignore: prefer_const_literals_to_create_immutables
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: Icon(Icons.info_outline_rounded),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0, left: 8),
+          child: Icon(Icons.notifications),
+        ),
+      ],
     );

@@ -23,9 +23,7 @@ class _editquoteState extends State<editquote> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
-      appBar: AppBar(
-        title: Text("Edit Quote"),
-      ),
+      appBar: appbar2(context, "Edit Quote"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(

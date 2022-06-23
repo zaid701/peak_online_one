@@ -5,12 +5,14 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:peak_online_one/main.dart';
 import 'package:peak_online_one/tickets/Ceateticket.dart';
 import 'package:peak_online_one/tickets/ticketchat.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class tickets extends StatefulWidget {
-  const tickets({Key? key}) : super(key: key);
+  final PersistentTabController controller;
+  const tickets({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<tickets> createState() => _ticketsState();
@@ -21,27 +23,7 @@ class _ticketsState extends State<tickets> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
-      appBar: AppBar(
-        centerTitle: true,
-        title: CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 25,
-          child: SvgPicture.asset(
-            "asset/Group.svg",
-            height: 45,
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.info_outline_rounded),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: Icon(Icons.notifications),
-          ),
-        ],
-      ),
+      appBar: appbar1(context, widget.controller, "Ticket", false),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(

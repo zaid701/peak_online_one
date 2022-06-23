@@ -9,8 +9,11 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/Home_Screenpages/Chat_tab.dart';
 import 'package:peak_online_one/Quotes/quotespage.dart';
+import 'package:peak_online_one/icongred.dart';
+import 'package:peak_online_one/main.dart';
 
 import 'package:peak_online_one/more/more.dart';
+import 'package:peak_online_one/my_flutter_app_icons.dart';
 import 'package:peak_online_one/project/projectpage.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
@@ -24,43 +27,42 @@ class Home_Page extends StatefulWidget {
 }
 
 class _Home_PageState extends State<Home_Page> {
+  // ignore: prefer_final_fields
   PersistentTabController _controller =
       PersistentTabController(initialIndex: 0);
   @override
   Widget build(BuildContext context) {
-    List<Widget> pages = [
-      Chat_page(),
-      tickets(),
-      projectpage(),
-      quotespage(),
-      morepage(),
-    ];
     List<PersistentBottomNavBarItem> _navBarsItems() {
       return [
         PersistentBottomNavBarItem(
-            icon: Icon(CupertinoIcons.chat_bubble_2),
+            icon: GradientIcon(MyFlutterApp.layer_1, colorssl()),
             title: ("Chat"),
-            activeColorPrimary: CupertinoColors.activeGreen,
+            inactiveIcon: Icon(MyFlutterApp.layer_1),
+            activeColorPrimary: CupertinoColors.black,
             inactiveColorPrimary: CupertinoColors.black),
         PersistentBottomNavBarItem(
-            icon: Icon(CupertinoIcons.headphones),
+            icon: GradientIcon(MyFlutterApp.vector, colorssl()),
             title: ("Tickets"),
-            activeColorPrimary: CupertinoColors.activeGreen,
+            inactiveIcon: Icon(MyFlutterApp.vector),
+            activeColorPrimary: CupertinoColors.black,
             inactiveColorPrimary: CupertinoColors.black),
         PersistentBottomNavBarItem(
-            icon: Icon(CupertinoIcons.share_up),
+            icon: GradientIcon(MyFlutterApp.vector__1_, colorssl()),
             title: ("Project"),
-            activeColorPrimary: CupertinoColors.activeGreen,
+            inactiveIcon: Icon(MyFlutterApp.vector__1_),
+            activeColorPrimary: CupertinoColors.black,
             inactiveColorPrimary: CupertinoColors.black),
         PersistentBottomNavBarItem(
-            icon: Icon(CupertinoIcons.quote_bubble),
+            icon: GradientIcon(MyFlutterApp.vector__2_, colorssl()),
             title: ("Qoutes"),
-            activeColorPrimary: CupertinoColors.activeGreen,
+            inactiveIcon: Icon(MyFlutterApp.vector__2_),
+            activeColorPrimary: CupertinoColors.black,
             inactiveColorPrimary: CupertinoColors.black),
         PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.bars),
+          icon: GradientIcon(MyFlutterApp.bars, colorssl()),
           title: ("More"),
-          activeColorPrimary: CupertinoColors.activeGreen,
+          inactiveIcon: Icon(MyFlutterApp.bars),
+          activeColorPrimary: CupertinoColors.black,
           inactiveColorPrimary: CupertinoColors.black,
         ),
       ];
@@ -69,8 +71,24 @@ class _Home_PageState extends State<Home_Page> {
     return PersistentTabView(
       context,
       controller: _controller,
-      screens: pages,
+      // ignore: prefer_const_literals_to_create_immutables
+      screens: [
+        Chat_page(),
+        tickets(
+          controller: _controller,
+        ),
+        projectpage(
+          controller: _controller,
+        ),
+        quotespage(
+          controller: _controller,
+        ),
+        morepage(
+          controller: _controller,
+        ),
+      ],
       items: _navBarsItems(),
+      navBarHeight: 60,
       confineInSafeArea: true,
       backgroundColor: Colors.white, // Default is Colors.white.
       handleAndroidBackButtonPress: true, // Default is true.
@@ -97,18 +115,7 @@ class _Home_PageState extends State<Home_Page> {
         duration: Duration(milliseconds: 200),
       ),
       navBarStyle:
-          NavBarStyle.style9, // Choose the nav bar style with this property.
+          NavBarStyle.style6, // Choose the nav bar style with this property.
     );
   }
-}
-
-Widget gred(FaIcon ic) {
-  return ShaderMask(
-    shaderCallback: (bounds) => ui.Gradient.linear(
-      Offset(20, 20),
-      Offset(0, 20),
-      [Colors.greenAccent, Colors.blueAccent],
-    ),
-    child: ic,
-  );
 }

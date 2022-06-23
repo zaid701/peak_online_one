@@ -36,9 +36,7 @@ class _projectaskpageState extends State<projectaskpage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
-      appBar: AppBar(
-        title: Text(b[tbtask.index]),
-      ),
+      appBar: appbar2(context, b[tbtask.index]),
       body: Column(
         children: [
           Padding(
@@ -87,7 +85,7 @@ class _projectaskpageState extends State<projectaskpage>
               width: 60,
               decoration: tbtask.index == i
                   ? BoxDecoration(
-                      gradient:colorssl(),
+                      gradient: colorssl(),
                       borderRadius: BorderRadius.circular(16))
                   : BoxDecoration(
                       color: Color(0xFFF7F9FC),

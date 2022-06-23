@@ -21,78 +21,89 @@ class _SigninState extends State<Signin> {
       DeviceOrientation.portraitDown,
     ]);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF95BB65),
-        elevation: 0,
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Stack(alignment: Alignment.bottomCenter, children: [
-            SvgPicture.asset(
-              "asset/Rect.svg",
-              fit: BoxFit.cover,
-              width: MediaQuery.of(context).size.width,
-            ),
-            CircleAvatar(
-              maxRadius: 60,
-              backgroundColor: Colors.white,
-              child: SvgPicture.asset(
-                "asset/Group.svg",
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Stack(alignment: Alignment.bottomCenter, children: [
+              Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.30,
+                child: FittedBox(
+                    fit: BoxFit.fill, child: SvgPicture.asset("asset/Rect.svg")
+                    // Image.asset(
+                    //"asset/Rectangl.png",
+                    // fit: BoxFit.fill,
+                    // ),
+                    ),
               ),
-            )
-          ]),
-          const SizedBox(
-            height: 10,
-          ),
-          Text(
-            "Support",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                color: Colors.lightGreen[300], fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child:
-                TextField(decoration: InputDecoration(label: Text("Username"))),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child:
-                TextField(decoration: InputDecoration(label: Text("Password"))),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0, right: 20),
-            child: Align(
-                child: Text("Forgot Password ?"),
-                alignment: Alignment.centerRight),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-              margin: const EdgeInsets.all(30.0),
-              height: 60,
-              width: 310,
-              decoration: BoxDecoration(
-                  gradient: colorssl(),
-                  borderRadius: BorderRadius.circular(60)),
-              child: InkWell(
-                child: Center(
-                  child: Text(
-                    "Sign in",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+              CircleAvatar(
+                maxRadius: MediaQuery.of(context).size.width * 0.15,
+                backgroundColor: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: FittedBox(
+                    fit: BoxFit.fill,
+                    child: SvgPicture.asset(
+                      "asset/Group.svg",
+                    ),
                   ),
                 ),
-                onTap: () => {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (builder) => Home_Page()))
-                },
-              ))
-        ],
+              )
+            ]),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            Text(
+              "Support",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Colors.lightGreen[300], fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                  decoration: InputDecoration(label: Text("Username"))),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: TextField(
+                  decoration: InputDecoration(label: Text("Password"))),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0, right: 20),
+              child: Align(
+                  child: Text("Forgot Password ?"),
+                  alignment: Alignment.centerRight),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            Container(
+                margin: const EdgeInsets.all(30.0),
+                height: MediaQuery.of(context).size.height * 0.075,
+                width: MediaQuery.of(context).size.width * 0.75,
+                decoration: BoxDecoration(
+                    gradient: colorssl(),
+                    borderRadius: BorderRadius.circular(60)),
+                child: InkWell(
+                  child: Center(
+                    child: Text(
+                      "Sign in",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height * 0.02),
+                    ),
+                  ),
+                  onTap: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (builder) => Home_Page()))
+                  },
+                ))
+          ],
+        ),
       ),
     );
   }

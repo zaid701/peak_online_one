@@ -6,6 +6,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../main.dart';
+
 class contact extends StatefulWidget {
   const contact({Key? key}) : super(key: key);
 
@@ -142,7 +144,7 @@ class _contactState extends State<contact> {
                       width: 300,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Colors.blueGrey),
+                          gradient: colorssl()),
                       child: Center(
                           child: Text(
                         "Update Details",

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:peak_online_one/main.dart';
 
 class createticket extends StatefulWidget {
   const createticket({Key? key}) : super(key: key);
@@ -19,9 +20,7 @@ class _createticketState extends State<createticket> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
-      appBar: AppBar(
-        title: Text("Create Ticket"),
-      ),
+      appBar: appbar2(context, "Create Ticket"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(

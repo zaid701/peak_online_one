@@ -18,47 +18,52 @@ class renewall extends StatefulWidget {
 class _renewallState extends State<renewall> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        // ignore: prefer_const_literals_to_create_immutables
-        children: [
-          Text(
-            "Manage Renewals",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          Text("An overview of your upcoming service renewals."),
-          Container(
-              margin: EdgeInsets.only(top: 10),
-              padding: EdgeInsets.only(bottom: 10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color(0xFFF7F9FC)),
-              child: Column(
-                children: [
-                  InkWell(child: roww2("Hosting", "Next Due Date : 28-8-2022")),
-                  Divider(),
-                  roww2("Domain Name", "Next Due Date : 28-8-2022"),
-                  Divider(),
-                  roww2("Updating Time",
-                      "Next Due Date : 28-8-2022\nTime Reminding : 12 Hours"),
-                ],
-              )),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleLeft)),
-              Text("1"),
-              IconButton(
-                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleRight)),
-            ],
-          )
-        ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Container(
+        margin: EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            Text(
+              "Manage Renewals",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+            Text("An overview of your upcoming service renewals."),
+            Container(
+                margin: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(bottom: 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color(0xFFF7F9FC)),
+                child: Column(
+                  children: [
+                    InkWell(
+                        child: roww2("Hosting", "Next Due Date : 28-8-2022")),
+                    Divider(),
+                    roww2("Domain Name", "Next Due Date : 28-8-2022"),
+                    Divider(),
+                    roww2("Updating Time",
+                        "Next Due Date : 28-8-2022\nTime Reminding : 12 Hours"),
+                  ],
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                    onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleLeft)),
+                Text("1"),
+                IconButton(
+                    onPressed: () {},
+                    icon: FaIcon(FontAwesomeIcons.angleRight)),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

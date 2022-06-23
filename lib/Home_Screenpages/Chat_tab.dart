@@ -23,6 +23,7 @@ class _Chat_pageState extends State<Chat_page> {
       backgroundColor: Color(0xffE5E5E5),
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: Color(0xff95BB65),
         title: CircleAvatar(
           backgroundColor: Colors.white,
           radius: 25,
@@ -31,6 +32,7 @@ class _Chat_pageState extends State<Chat_page> {
             height: 45,
           ),
         ),
+        // ignore: prefer_const_literals_to_create_immutables
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),

@@ -30,6 +30,7 @@ class _perchatState extends State<perchat> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff95BB65),
         leadingWidth: 30,
         title: Row(
           mainAxisSize: MainAxisSize.min,
@@ -88,8 +89,14 @@ class _perchatState extends State<perchat> {
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.grey[200],
+                        contentPadding: EdgeInsets.only(
+                            left: 15, bottom: 11, top: 11, right: 15),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
+                          borderSide: BorderSide(
+                            width: 0,
+                            style: BorderStyle.none,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         hintText: "Type A Massege..",
                         hintStyle: TextStyle(color: Colors.black)),

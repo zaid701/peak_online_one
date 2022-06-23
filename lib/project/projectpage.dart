@@ -11,7 +11,8 @@ import 'package:peak_online_one/project/projectaskpage.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class projectpage extends StatefulWidget {
-  const projectpage({Key? key}) : super(key: key);
+  final PersistentTabController controller;
+  const projectpage({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<projectpage> createState() => _projectpageState();
@@ -22,94 +23,79 @@ class _projectpageState extends State<projectpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
-      appBar: AppBar(
-        centerTitle: true,
-        title: CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 25,
-          child: SvgPicture.asset(
-            "asset/Group.svg",
-            height: 45,
-          ),
-        ),
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.info_outline_rounded),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: Icon(Icons.notifications),
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 15,
-          ),
-          Row(
-            // ignore: prefer_const_literals_to_create_immutables
+      appBar: appbar1(context, widget.controller, "Projects", false),
+      body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
             children: [
               SizedBox(
-                width: 15,
+                height: 15,
               ),
-              Text(
-                "Projects",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-              ),
-              Spacer(),
-              Icon(
-                Icons.search,
+              Row(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Text(
+                    "Projects",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.search,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                ],
               ),
               SizedBox(
-                width: 20,
+                height: 5,
               ),
+              Container(
+                margin: EdgeInsets.all(10),
+                padding:
+                    EdgeInsets.only(left: 15, right: 10, top: 5, bottom: 5),
+                decoration: BoxDecoration(
+                    color: Color(0xFFF7F9FC),
+                    borderRadius: BorderRadius.circular(15)),
+                child: Column(
+                  children: [
+                    projectrow(),
+                    Divider(),
+                    projectrow(),
+                    Divider(),
+                    projectrow(),
+                    Divider(),
+                    projectrow()
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                      onPressed: () {},
+                      icon: FaIcon(FontAwesomeIcons.angleLeft)),
+                  Text("1"),
+                  IconButton(
+                      onPressed: () {},
+                      icon: FaIcon(FontAwesomeIcons.angleRight)),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              )
             ],
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.only(left: 15, right: 10, top: 5, bottom: 5),
-            decoration: BoxDecoration(
-                color: Color(0xFFF7F9FC),
-                borderRadius: BorderRadius.circular(15)),
-            child: Column(
-              children: [
-                projectrow(),
-                Divider(),
-                projectrow(),
-                Divider(),
-                projectrow(),
-                Divider(),
-                projectrow()
-              ],
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleLeft)),
-              Text("1"),
-              IconButton(
-                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleRight)),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          )
-        ],
-      ),
+          )),
     );
   }
 
   Widget projectrow() => InkWell(
-    onTap: ()=> pushNewScreen(context, screen: projectaskpage(),withNavBar: false),
-    child: Row(
+        onTap: () =>
+            pushNewScreen(context, screen: projectaskpage(), withNavBar: false),
+        child: Row(
           children: [
             Expanded(
               child: Column(
@@ -120,7 +106,7 @@ class _projectpageState extends State<projectpage> {
                   ),
                   Row(
                     // ignore: prefer_const_literals_to_create_immutables
-  
+
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
                       Text("Web Design And Apps",
@@ -143,9 +129,9 @@ class _projectpageState extends State<projectpage> {
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-  
+
                         // ignore: prefer_const_literals_to_create_immutables
-  
+
                         // ignore: prefer_const_literals_to_create_immutables
                         children: [
                           Text(
@@ -197,5 +183,5 @@ class _projectpageState extends State<projectpage> {
             ),
           ],
         ),
-  );
+      );
 }

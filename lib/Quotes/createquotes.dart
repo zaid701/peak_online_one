@@ -20,9 +20,7 @@ class _createquoteState extends State<createquote> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
-      appBar: AppBar(
-        title: Text("Create New Quote"),
-      ),
+      appBar: appbar2(context, "Create New Quote"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
