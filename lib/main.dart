@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:peak_online_one/Signin.dart';
+import 'package:peak_online_one/more/allnotification.dart';
+import 'package:peak_online_one/morepages.dart/knowledgbased.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 void main() {
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.green),
+      theme: ThemeData(primarySwatch: Colors.green, fontFamily: "Roboto"),
       debugShowCheckedModeBanner: false,
       home: Signin(),
     );
@@ -92,13 +94,21 @@ AppBar appbar1(BuildContext context, PersistentTabController controller,
           : null,
       // ignore: prefer_const_literals_to_create_immutables
       actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: Icon(Icons.info_outline_rounded),
+        InkWell(
+          onTap: () => pushNewScreen(context,
+              screen: knowledgebased(), withNavBar: true),
+          child: Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: Icon(Icons.info_outline_rounded),
+          ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0, left: 8),
-          child: Icon(Icons.notifications),
+        InkWell(
+          onTap: () => pushNewScreen(context,
+              screen: allnotification(), withNavBar: true),
+          child: Padding(
+            padding: const EdgeInsets.only(right: 8.0, left: 8),
+            child: Icon(Icons.notifications),
+          ),
         ),
       ],
     );
@@ -111,13 +121,21 @@ AppBar appbar2(BuildContext context, String title) => AppBar(
       title: Text(title),
       // ignore: prefer_const_literals_to_create_immutables
       actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: Icon(Icons.info_outline_rounded),
+        InkWell(
+          onTap: () => pushNewScreen(context,
+              screen: knowledgebased(), withNavBar: true),
+          child: Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: Icon(Icons.info_outline_rounded),
+          ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0, left: 8),
-          child: Icon(Icons.notifications),
+        InkWell(
+          onTap: () => pushNewScreen(context,
+              screen: allnotification(), withNavBar: true),
+          child: Padding(
+            padding: const EdgeInsets.only(right: 8.0, left: 8),
+            child: Icon(Icons.notifications),
+          ),
         ),
       ],
     );

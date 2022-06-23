@@ -101,9 +101,7 @@ class _profileeState extends State<profilee> with TickerProviderStateMixin {
                 SLCPAGE(),
                 Groupspage(),
                 preference(),
-                notification(
-                  pg: pageController,
-                ),
+                notification(pg: pageController,),
               ],
               controller: pageController,
               onPageChanged: (int i) => setState(() {

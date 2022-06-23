@@ -18,17 +18,7 @@ class _knowledgeinfoState extends State<knowledgeinfo> {
       backgroundColor: Color(0xffE5E5E5),
       appBar: AppBar(
         title: Text("Knowledge Bases"),
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.info_outline_rounded),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: Icon(Icons.notifications),
-          ),
-        ],
+        backgroundColor: Color(0xff95BB65),
       ),
       body: Column(
         children: [

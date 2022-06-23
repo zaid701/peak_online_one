@@ -20,6 +20,7 @@ class _allnotificationState extends State<allnotification> {
       backgroundColor: Color(0xffE5E5E5),
       appBar: AppBar(
         title: Text("Notifications"),
+        backgroundColor: Color(0xff95BB65),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,

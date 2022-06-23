@@ -7,7 +7,10 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:peak_online_one/Home_Screenpages/perchat.dart';
 import 'package:peak_online_one/main.dart';
+import 'package:peak_online_one/more/allnotification.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+
+import '../morepages.dart/knowledgbased.dart';
 
 class Chat_page extends StatefulWidget {
   const Chat_page({Key? key}) : super(key: key);
@@ -34,13 +37,19 @@ class _Chat_pageState extends State<Chat_page> {
         ),
         // ignore: prefer_const_literals_to_create_immutables
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.info_outline_rounded),
+          InkWell(
+            onTap: () => pushNewScreen(context, screen: knowledgebased(),withNavBar: true),
+            child: Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: Icon(Icons.info_outline_rounded),
+            ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: Icon(Icons.notifications),
+          InkWell(
+            onTap: () => pushNewScreen(context, screen: allnotification(),withNavBar: true),
+            child: Padding(
+              padding: const EdgeInsets.only(right: 8.0, left: 8),
+              child: Icon(Icons.notifications),
+            ),
           ),
         ],
       ),

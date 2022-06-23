@@ -29,11 +29,11 @@ class MyFlutterApp {
   static const IconData vector = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData layer_1 = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData vector__2_ = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData layer_1__3_ = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData layer_1__4_ = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData layer_1__5_ = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData _ = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData group_1146 = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData contact = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData account = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData renewal = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData jen = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData del = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData layer_1__1_ = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData layer_1__2_ = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData bars = IconData(0xf0c9, fontFamily: _kFontFam, fontPackage: _kFontPkg);

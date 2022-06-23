@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/Home_Screenpages/announcement.dart';
+import 'package:peak_online_one/icongred.dart';
 import 'package:peak_online_one/main.dart';
 import 'package:peak_online_one/more/allnotification.dart';
 import 'package:peak_online_one/more/profile.dart';
 import 'package:peak_online_one/morepages.dart/knowledgbased.dart';
 import 'package:peak_online_one/morepages.dart/knowledgeinfo.dart';
+import 'package:peak_online_one/my_flutter_app_icons.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class morepage extends StatefulWidget {
@@ -125,18 +127,12 @@ class _morepageState extends State<morepage> {
                     shrinkWrap: true,
                     padding: EdgeInsets.only(top: 5, bottom: 10),
                     children: [
-                      it(Icon(FaIcon(FontAwesomeIcons.calendar).icon),
-                          "Renewals", 1),
-                      it(Icon(FaIcon(FontAwesomeIcons.user).icon), "Account",
-                          0),
-                      it(Icon(FaIcon(FontAwesomeIcons.lock).icon), "Security",
-                          2),
-                      it(Icon(FaIcon(FontAwesomeIcons.contactBook).icon),
-                          "Contact Detail", 3),
-                      it(Icon(FaIcon(FontAwesomeIcons.bullhorn).icon),
-                          "Announcement", 11),
-                      it(Icon(FaIcon(FontAwesomeIcons.circleInfo).icon),
-                          "Knowledga Base", 12),
+                      it(MyFlutterApp.renewal, "Renewals", 1),
+                      it(MyFlutterApp.account, "Account", 0),
+                      it(Icons.lock_outlined, "Security", 2),
+                      it(MyFlutterApp.contact, "Contact Detail", 3),
+                      it(MyFlutterApp.jen, "Announcement", 11),
+                      it(Icons.info_outline_rounded, "Knowledga Base", 12),
                     ],
                   ),
                   Padding(
@@ -161,7 +157,7 @@ class _morepageState extends State<morepage> {
     );
   }
 
-  Widget it(Icon i, String name, int i2) {
+  Widget it(IconData i, String name, int i2) {
     return InkWell(
       onTap: () => i2 == 11
           ? pushNewScreen(context, screen: announmentpage())
@@ -188,10 +184,7 @@ class _morepageState extends State<morepage> {
           children: [
             Row(
               children: [
-                ShaderMask(
-                    shaderCallback: (bounds) => colorssl().createShader(bounds),
-                    blendMode: BlendMode.srcATop,
-                    child: i),
+                GradientIcon(i, colorssl()),
                 Spacer(),
                 CircleAvatar(
                   backgroundColor: Colors.green.shade900,

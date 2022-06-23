@@ -23,17 +23,7 @@ class _knowledgebasedState extends State<knowledgebased> {
       backgroundColor: Color(0xffE5E5E5),
       appBar: AppBar(
         title: Text("Knowledge Bases"),
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.info_outline_rounded),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: Icon(Icons.notifications),
-          ),
-        ],
+        backgroundColor: Color(0xff95BB65),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -122,8 +112,9 @@ class _knowledgebasedState extends State<knowledgebased> {
   }
 
   Widget expansionrow(String title) => InkWell(
-    onTap: () => pushNewScreen(context, screen: knowledgeinfo(),withNavBar: true),
-    child: Padding(
+        onTap: () =>
+            pushNewScreen(context, screen: knowledgeinfo(), withNavBar: true),
+        child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
@@ -146,5 +137,5 @@ class _knowledgebasedState extends State<knowledgebased> {
             ],
           ),
         ),
-  );
+      );
 }
