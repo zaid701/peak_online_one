@@ -5,6 +5,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/Home_Screenpages/announcementdetail.dart';
+import 'package:peak_online_one/main.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class announmentpage extends StatefulWidget {
@@ -19,20 +20,7 @@ class _announmentpageState extends State<announmentpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
-      appBar: AppBar(
-        title: Text("Announcements"),
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.info_outline_rounded),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: Icon(Icons.notifications),
-          ),
-        ],
-      ),
+      appBar: appbar2(context, "Announcements"),
       body: Column(
         children: [
           SizedBox(

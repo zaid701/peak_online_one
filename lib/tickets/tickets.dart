@@ -178,8 +178,11 @@ class _ticketsState extends State<tickets> {
                             PaginateData ur = auto.data!.paginateData![index];
                             return Column(
                               children: [
-                                ticketrow(ur.title.toString(), context,
-                                    ur.statusId as int,ur.categoryName.toString()),
+                                ticketrow(
+                                    ur.title.toString(),
+                                    context,
+                                    ur.statusId as int,
+                                    ur.categoryName.toString()),
                                 Divider()
                               ],
                             );
@@ -193,27 +196,68 @@ class _ticketsState extends State<tickets> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                  onPressed: () {
-                    setState(() {
-                      c--;
-                      load = true;
-                      getticketdata(auto.data!.prevPageUrl.toString())
-                          .then((value) => auto = value);
-                    });
-                  },
-                  icon: FaIcon(FontAwesomeIcons.angleLeft)),
-              Text(c.toString()),
-              IconButton(
-                  onPressed: () {
-                    setState(() {
-                      c++;
-                      load = true;
-                      getticketdata(auto.data!.nextPageUrl.toString())
-                          .then((value) => auto = value);
-                    });
-                  },
-                  icon: FaIcon(FontAwesomeIcons.angleRight)),
+              Container(
+                height: 35,
+                width: 35,
+                // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Color(0xff95BB65), width: 2)),
+                child: Center(
+                  child: InkWell(
+                    onTap: () =>
+                      c > 1
+                          ? setState(() {
+                              c--;
+                              load = true;
+                              getticketdata(auto.data!.prevPageUrl.toString())
+                                  .then((value) => auto = value);
+                            })
+                          : null,
+                    
+                    child: FaIcon(
+                      FontAwesomeIcons.angleLeft,
+                      size: 22,
+                      color: Color(0xff95BB65),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                c.toString(),
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Container(
+                height: 35,
+                width: 35,
+                // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Color(0xff95BB65), width: 2)),
+                child: Center(
+                  child: InkWell(
+                    onTap: () =>c<auto.data!.links!.length-2?
+                      setState(() {
+                        c++;
+                        load = true;
+                        getticketdata(auto.data!.nextPageUrl.toString())
+                            .then((value) => auto = value);
+                      }):null,
+                    
+                    child: FaIcon(
+                      FontAwesomeIcons.angleRight,
+                      size: 22,
+                      color: Color(0xff95BB65),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
           SizedBox(
@@ -241,7 +285,7 @@ class _ticketsState extends State<tickets> {
   }
 }
 
-Widget ticketrow(String title, BuildContext context, int code,String catname) {
+Widget ticketrow(String title, BuildContext context, int code, String catname) {
   Color c;
   String task;
   String task2;

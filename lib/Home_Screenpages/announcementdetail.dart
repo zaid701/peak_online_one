@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../main.dart';
+
 class announdetail extends StatefulWidget {
   const announdetail({Key? key}) : super(key: key);
 
@@ -16,20 +18,7 @@ class _announdetailState extends State<announdetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
-      appBar: AppBar(
-        title: Text("Announcements"),
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.info_outline_rounded),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0, left: 8),
-            child: Icon(Icons.notifications),
-          ),
-        ],
-      ),
+      appBar:  appbar2(context, "Announcements"),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
