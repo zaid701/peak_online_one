@@ -1,10 +1,16 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, use_build_context_synchronously
+
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart';
 import 'package:peak_online_one/Home_Screenpages/Homepage.dart';
 import 'package:peak_online_one/main.dart';
+import 'package:peak_online_one/model/header.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Signin extends StatefulWidget {
   const Signin({Key? key}) : super(key: key);
@@ -16,6 +22,13 @@ class Signin extends StatefulWidget {
 class _SigninState extends State<Signin> {
   @override
   Widget build(BuildContext context) {
+    final String token =
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNDY2MjMwYzNjMDBmMTU3OTUyMjQ5MTJkMGMwYTBmZWI0NmE4MmRiZmI2YmIyNzM4ZDJmYWM3NzJlNWZjYzdjZWRjMzUyODAxZTg2MmNmYTQiLCJpYXQiOjE2NTYzMDU5MzUuMTAyMDEyLCJuYmYiOjE2NTYzMDU5MzUuMTAyMDE4LCJleHAiOjE2ODc4NDE5MzUuMDk1MzI0LCJzdWIiOiIxNSIsInNjb3BlcyI6W119.hD_-J_Szkf-dxFyPgmqZtvKTpFD4ydRKAFqnoRbR0zuPQcCsaXGu7RDPR0Wzo6_zKlis-Wy9A_CUbJNvk-Gu_e2i4RBsS1IYC2gpFyrhISISuUnlGAeWkvrdZyyEfZ0qs8_YjSrn6zn-ePpPaonEVNEfakGz42yL2kGLl_9dDruOyGe-EZEMNaldyKeMdHVzR4_Y69h3RDf6ap1RBXjH72gUDmy5pBrOq2k_vCrjvu0KOagp4WNE9y6fjcxOBitIGpLuU6OV4DtgRsaWsYO6Iydzq0oKxb98D4rPSKpNIOLFaUNTNtLttlchxODfviAQ72KyPgIbP8jPblRStrNW4gOKbbfeI7vTFwAMTxtBXAUj9NwZ5r3pcdnQBnJpQTwwQei9mPhdvGW2osatzhtc_e_AhNHGMj08kdE0CzMIDcpS4K-H-DWT_AZRXW7aB6-Xi7fP2jAfL9MoM3P_GcDO69-3hs58vxXbpXbkLCZ_8JCDstWQdYAnR6BzcKXwKCO73nO0OxhYuXNrw6YTLi0osJy2hE5pbB7yNwsbVCn6qR2-3F42H8QJUzNmPYKpI5KnhOAAlDRkppjZnaRgBiYC54X2amlipLn_rtLksA0tQpJjwI10xhDaFOIc-EWacLBOH49aBlBzh3BAPQIFNxsXSM-hTALwq51LCy62fYPcJD4";
+    Uri url = Uri.parse("http://44.234.205.222/peakonline/api/login");
+
+    String email = "";
+    String pass = "";
+
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -31,12 +44,8 @@ class _SigninState extends State<Signin> {
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.30,
                 child: FittedBox(
-                    fit: BoxFit.fill, child: SvgPicture.asset("asset/Rect.svg")
-                    // Image.asset(
-                    //"asset/Rectangl.png",
-                    // fit: BoxFit.fill,
-                    // ),
-                    ),
+                    fit: BoxFit.fill,
+                    child: SvgPicture.asset("asset/Rect.svg")),
               ),
               CircleAvatar(
                 maxRadius: MediaQuery.of(context).size.width * 0.15,
@@ -67,11 +76,17 @@ class _SigninState extends State<Signin> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: TextField(
+                  onChanged: (value) => setState(() {
+                        email = value;
+                      }),
                   decoration: InputDecoration(label: Text("Username"))),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: TextField(
+                  onChanged: (value) => setState(() {
+                        pass = value;
+                      }),
                   decoration: InputDecoration(label: Text("Password"))),
             ),
             Padding(
@@ -97,14 +112,31 @@ class _SigninState extends State<Signin> {
                           fontSize: MediaQuery.of(context).size.height * 0.02),
                     ),
                   ),
-                  onTap: () => {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (builder) => Home_Page()))
+                  onTap: () {
+                    check(email, pass, url, token);
                   },
                 ))
           ],
         ),
       ),
     );
+  }
+
+  addshred() async {
+    final pref = await SharedPreferences.getInstance();
+    pref.setString("signed", "true");
+    Fluttertoast.showToast(msg: "inserted");
+  }
+
+  check(String email, String pass, Uri url, String token) async {
+    final Response = await Client().post(url,
+        headers: headerWithToken(token: token),
+        body: jsonEncode(<String, String>{'email': email, 'password': pass}));
+    if (Response.statusCode >= 200 && Response.statusCode <= 300) {
+      addshred();
+      Navigator.popAndPushNamed(context, "home");
+    } else {
+      Fluttertoast.showToast(msg: "Feild");
+    }
   }
 }

@@ -1,28 +1,51 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter/physics.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart';
+import 'package:peak_online_one/Home_Screenpages/Homepage.dart';
 import 'package:peak_online_one/Signin.dart';
+import 'package:peak_online_one/Splace.dart';
 import 'package:peak_online_one/more/allnotification.dart';
 import 'package:peak_online_one/morepages.dart/knowledgbased.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  
+  @override
+  void initState() {
+    
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green, fontFamily: "Roboto"),
       debugShowCheckedModeBanner: false,
-      home: Signin(),
+      routes: {
+        'abd' :((context) => Signin()),
+        'home' :((context) => Home_Page()),
+      },
+     home:splace(),
     );
   }
+
+ 
 }
 
 MaterialColor buildMaterialColor(Color color) {

@@ -84,7 +84,7 @@ class _Home_PageState extends State<Home_Page> {
           controller: _controller,
         ),
         morepage(
-          controller: _controller,
+          controller: _controller,Maincon: context,
         ),
       ],
       items: _navBarsItems(),

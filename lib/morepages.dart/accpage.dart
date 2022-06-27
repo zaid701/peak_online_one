@@ -70,7 +70,7 @@ class _accpageState extends State<accpage> {
                 ],
               ),
             )));
-  }
+  } 
 
   Widget it(Icon i, String name, int i2) {
     return InkWell(

@@ -12,10 +12,12 @@ import 'package:peak_online_one/morepages.dart/knowledgbased.dart';
 import 'package:peak_online_one/morepages.dart/knowledgeinfo.dart';
 import 'package:peak_online_one/my_flutter_app_icons.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class morepage extends StatefulWidget {
+  final BuildContext Maincon;
   final PersistentTabController controller;
-  const morepage({Key? key, required this.controller}) : super(key: key);
+  const morepage({Key? key, required this.controller, required this.Maincon}) : super(key: key);
 
   @override
   State<morepage> createState() => _morepageState();
@@ -142,6 +144,10 @@ class _morepageState extends State<morepage> {
                   ),
                   Divider(),
                   ListTile(
+                      onTap: (() {
+                        logoutshred();
+                        Navigator.popAndPushNamed(widget.Maincon, "abd");
+                      }),
                       leading: IconButton(
                           onPressed: () {},
                           icon: FaIcon(FontAwesomeIcons.signOut)),
@@ -155,6 +161,11 @@ class _morepageState extends State<morepage> {
             )),
       ),
     );
+  }
+
+  logoutshred() async {
+    final pref = await SharedPreferences.getInstance();
+    pref.setString("signed", "false");
   }
 
   Widget it(IconData i, String name, int i2) {
