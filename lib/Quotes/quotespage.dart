@@ -1,16 +1,11 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
-
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, camel_case_types, non_constant_identifier_names
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/Quotes/createquotes.dart';
 import 'package:peak_online_one/Quotes/editquote.dart';
 import 'package:peak_online_one/Quotes/quotebyadmin.dart';
 import 'package:peak_online_one/Quotes/quotehistory.dart';
 import 'package:peak_online_one/main.dart';
-import 'package:peak_online_one/morepages.dart/notification.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class quotespage extends StatefulWidget {

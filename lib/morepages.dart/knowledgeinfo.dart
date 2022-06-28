@@ -1,9 +1,5 @@
-// ignore_for_file: prefer_const_constructors
-
+// ignore_for_file: prefer_const_constructors, camel_case_types
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 class knowledgeinfo extends StatefulWidget {
   const knowledgeinfo({Key? key}) : super(key: key);
 

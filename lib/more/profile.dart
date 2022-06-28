@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
-
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, camel_case_types, deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/main.dart';
@@ -10,7 +9,6 @@ import 'package:peak_online_one/morepages.dart/groups.dart';
 import 'package:peak_online_one/morepages.dart/notification.dart';
 import 'package:peak_online_one/morepages.dart/preference.dart';
 import 'package:peak_online_one/morepages.dart/security.dart';
-
 import '../morepages.dart/accpage.dart';
 
 class profilee extends StatefulWidget {
@@ -89,7 +87,6 @@ class _profileeState extends State<profilee> with TickerProviderStateMixin {
           ),
           Expanded(
             child: PageView(
-              // ignore: sort_child_properties_last
               children: [
                 accpage(
                   pg: pageController,

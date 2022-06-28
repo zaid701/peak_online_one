@@ -1,12 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'dart:ui' as ui;
-
+// ignore_for_file: prefer_const_constructors, camel_case_types
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/Home_Screenpages/Chat_tab.dart';
 import 'package:peak_online_one/Quotes/quotespage.dart';
 import 'package:peak_online_one/icongred.dart';

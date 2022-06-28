@@ -1,10 +1,5 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, camel_case_types
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import '../main.dart';
 
 class preference extends StatefulWidget {
@@ -24,9 +19,7 @@ class _preferenceState extends State<preference> {
       child: Padding(
         padding: const EdgeInsets.only(left: 8.0, right: 8),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-            // ignore: prefer_const_literals_to_create_immutables
             children: [
-              // ignore: prefer_const_constructors
               Text(
                 "Account Preferences",
                 style: TextStyle(

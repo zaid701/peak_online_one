@@ -1,13 +1,10 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, use_build_context_synchronously
-
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, use_build_context_synchronously, prefer_const_declarations, non_constant_identifier_names
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart';
-import 'package:peak_online_one/Home_Screenpages/Homepage.dart';
 import 'package:peak_online_one/main.dart';
 import 'package:peak_online_one/model/header.dart';
 import 'package:shared_preferences/shared_preferences.dart';

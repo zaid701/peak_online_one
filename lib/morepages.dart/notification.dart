@@ -1,6 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, camel_case_types
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/more/notificationdetail.dart';
@@ -29,9 +27,7 @@ class _notificationState extends State<notification> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      // ignore: prefer_const_constructors
                       Text(
                         "Ticket Notifications",
                         style: TextStyle(
@@ -53,9 +49,7 @@ class _notificationState extends State<notification> {
                   ),
                 ),
               ),
-              // ignore: prefer_const_constructors
               Expanded(
-                  // ignore: prefer_const_constructors
                   child: Icon(
                 Icons.search,
                 size: 25,

@@ -1,15 +1,11 @@
-// ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers
-
+// ignore_for_file: prefer_const_constructors, no_leading_underscores_for_local_identifiers, camel_case_types, non_constant_identifier_names
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/Home_Screenpages/announcement.dart';
 import 'package:peak_online_one/icongred.dart';
 import 'package:peak_online_one/main.dart';
-import 'package:peak_online_one/more/allnotification.dart';
 import 'package:peak_online_one/more/profile.dart';
 import 'package:peak_online_one/morepages.dart/knowledgbased.dart';
-import 'package:peak_online_one/morepages.dart/knowledgeinfo.dart';
 import 'package:peak_online_one/my_flutter_app_icons.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -1,13 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
+// ignore_for_file: prefer_const_constructors, camel_case_types, unused_local_variable
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/main.dart';
 import 'package:peak_online_one/model/ticketmodel.dart';
-
 import '../Home_Screenpages/perchat.dart';
 
 class tickectchat extends StatefulWidget {

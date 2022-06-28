@@ -1,8 +1,5 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types
-
+// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_interpolation_to_compose_strings
 import 'dart:convert';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:http/http.dart';

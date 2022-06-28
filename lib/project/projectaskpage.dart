@@ -1,6 +1,6 @@
+// ignore_for_file: camel_case_types, prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/main.dart';
 import 'package:peak_online_one/project/projectattechments.dart';
@@ -61,7 +61,6 @@ class _projectaskpageState extends State<projectaskpage>
           Divider(),
           Expanded(
             child: PageView(
-              // ignore: sort_child_properties_last
               children: [projectmsgarea(), projecttask(), projectattechment()],
               controller: pageControllertask,
               onPageChanged: (int i) => setState(() {

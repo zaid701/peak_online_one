@@ -1,12 +1,6 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, curly_braces_in_flow_control_structures
-
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, curly_braces_in_flow_control_structures, camel_case_types
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart';
 import 'package:peak_online_one/Home_Screenpages/loadingwidget.dart';
@@ -16,9 +10,7 @@ import 'package:peak_online_one/model/ticketmodel.dart';
 import 'package:peak_online_one/tickets/Ceateticket.dart';
 import 'package:peak_online_one/tickets/ticketchat.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-
 import '../model/header.dart';
-
 class tickets extends StatefulWidget {
   final PersistentTabController controller;
   const tickets({Key? key, required this.controller}) : super(key: key);

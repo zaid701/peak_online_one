@@ -1,13 +1,7 @@
+// ignore_for_file: camel_case_types
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:http/http.dart';
-import 'package:peak_online_one/Home_Screenpages/Homepage.dart';
-import 'package:peak_online_one/Signin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class splace extends StatefulWidget {

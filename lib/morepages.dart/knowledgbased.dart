@@ -1,8 +1,5 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, camel_case_types
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/morepages.dart/knowledgeinfo.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
@@ -27,13 +24,11 @@ class _knowledgebasedState extends State<knowledgebased> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        // ignore: prefer_const_literals_to_create_immutables
         children: [
           SizedBox(
             height: 20,
           ),
           Row(
-            // ignore: prefer_const_literals_to_create_immutables
             children: [
               SizedBox(
                 width: 15,

@@ -31,8 +31,7 @@ class _GroupspageState extends State<Groupspage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // ignore: prefer_const_literals_to_create_immutables
-                  children: [
-                    // ignore: prefer_const_constructors
+                  children: [                
                     Text(
                       "Groups",
                       style: TextStyle(
@@ -90,9 +89,7 @@ class _GroupspageState extends State<Groupspage> {
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-
                 // ignore: prefer_const_literals_to_create_immutables
-
                 children: [
                   Text(
                     title,

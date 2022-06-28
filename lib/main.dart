@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:peak_online_one/Home_Screenpages/Homepage.dart';
@@ -8,7 +7,6 @@ import 'package:peak_online_one/Splace.dart';
 import 'package:peak_online_one/more/allnotification.dart';
 import 'package:peak_online_one/morepages.dart/knowledgbased.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-
 void main() {
   runApp(const MyApp());
 }
