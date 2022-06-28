@@ -83,8 +83,9 @@ class _morepageState extends State<morepage> {
                                         ),
                                         Text("Trever Jones",
                                             style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 16))
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16,
+                                            ))
                                       ],
                                     ),
                                   )),
@@ -108,14 +109,26 @@ class _morepageState extends State<morepage> {
                             ),
                             Text(
                               "Trever Jones",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 16),
                             ),
                             Spacer(),
-                            Text("Update Profile Image"),
-                            Icon(FaIcon(
-                              FontAwesomeIcons.angleRight,
+                            Text(
+                              "Update Profile Image",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 10,
+                                  color: Colors.white),
+                            ),
+                            Icon(
+                              FaIcon(
+                                FontAwesomeIcons.angleRight,
+                              ).icon,
+                              color: Colors.white,
                               size: 17,
-                            ).icon)
+                            )
                           ],
                         ),
                       ),
@@ -141,21 +154,41 @@ class _morepageState extends State<morepage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                        "Copyright © 2014-2022 Peak Online Limited. All rights reserved "),
+                      "Copyright © 2014-2022 Peak Online Limited. All rights reserved ",
+                      style:
+                          TextStyle(fontSize: 11, fontWeight: FontWeight.w400),
+                    ),
                   ),
                   Divider(),
-                  ListTile(
-                      onTap: (() {
-                        logoutshred();
-                        Navigator.popAndPushNamed(widget.Maincon, "abd");
-                      }),
-                      leading: IconButton(
+                  InkWell(
+                    onTap: () {
+                      logoutshred();
+                      Navigator.popAndPushNamed(widget.Maincon, "abd");
+                    },
+                    child: Row(children: [
+                      SizedBox(
+                        width: 20,
+                      ),
+                      IconButton(
                           onPressed: () {},
-                          icon: FaIcon(FontAwesomeIcons.signOut)),
-                      title: Text("Log Out"),
-                      trailing: IconButton(
+                          icon: FaIcon(
+                            FontAwesomeIcons.signOut,
+                            color: Color(0xff828282),
+                          )),
+                      Text("Log Out",
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xffB3B3B3))),
+                      Spacer(),
+                      IconButton(
                           onPressed: () {},
-                          icon: FaIcon(FontAwesomeIcons.angleRight))),
+                          icon: FaIcon(
+                            FontAwesomeIcons.angleRight,
+                            color: Color(0xff828282),
+                          ))
+                    ]),
+                  ),
                   Divider()
                 ],
               ),
@@ -207,7 +240,11 @@ class _morepageState extends State<morepage> {
                 Text("New"),
               ],
             ),
-            Text(name)
+            Text(name,
+                style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xff666666)))
           ],
         ),
       ),

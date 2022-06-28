@@ -35,14 +35,20 @@ class _GroupspageState extends State<Groupspage> {
                     // ignore: prefer_const_constructors
                     Text(
                       "Groups",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Color(0xff666666)),
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 6,
                     ),
                     Text(
-                        "Here you can link up with other members of the same company or organisations for tickets, quotes or ongoing projects."),
+                        "Here you can link up with other members of the same company or organisations for tickets, quotes or ongoing projects.",
+                         style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w300,
+                  color: Color(0xff666666)),),
                   ],
                 ),
               ),
@@ -90,9 +96,15 @@ class _GroupspageState extends State<Groupspage> {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Color(0xff444444)),
                   ),
-                  Text(sub)
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Text(sub, style: TextStyle(color: Color(0xff5A5A5E)))
                 ],
               ),
               Spacer(),

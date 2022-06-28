@@ -29,13 +29,20 @@ class _preferenceState extends State<preference> {
               // ignore: prefer_const_constructors
               Text(
                 "Account Preferences",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xff666666)),
               ),
               SizedBox(
-                height: 5,
+                height: 6,
               ),
               Text(
-                  "You can set additional account preferences below. They’re optional but will help you set your own time zone and date format."),
+                  "You can set additional account preferences below. They’re optional but will help you set your own time zone and date format.",
+                   style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w300,
+                  color: Color(0xff666666)),),
               Container(
                 margin: EdgeInsets.only(top: 10),
                 padding: EdgeInsets.all(20),
@@ -65,7 +72,7 @@ class _preferenceState extends State<preference> {
                       decoration: BoxDecoration(
                           color: Color(0xFFEEEEEE),
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.grey)),
+                          border: Border.all(color: Color(0xffC6CACE))),
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton(
                           isExpanded: true,
@@ -106,7 +113,7 @@ class _preferenceState extends State<preference> {
                       decoration: BoxDecoration(
                           color: Color(0xFFEEEEEE),
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.grey)),
+                          border: Border.all(color: Color(0xffC6CACE))),
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton(
                           isExpanded: true,

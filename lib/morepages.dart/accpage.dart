@@ -37,6 +37,9 @@ class _accpageState extends State<accpage> {
                         color: Color(0xFFF7F9FC)),
                     child: Column(
                       children: [
+                        SizedBox(
+                          height: 5,
+                        ),
                         roww11("Your Details",
                             "Name,Email,Address,Company Name,Phone"),
                         Divider(),
@@ -105,7 +108,11 @@ class _accpageState extends State<accpage> {
                 Text("New"),
               ],
             ),
-            Text(name)
+            Text(name,
+                style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xff666666)))
           ],
         ),
       ),
@@ -122,7 +129,13 @@ class _accpageState extends State<accpage> {
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Color(0xff5A5A5E)),
+                ),
+                SizedBox(
+                  height: 9,
                 ),
                 Text(sub)
               ],

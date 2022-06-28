@@ -24,9 +24,19 @@ class _securityyState extends State<securityy> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Security Details",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xff666666))),
+            SizedBox(
+              height: 6,
+            ),
             Text(
-                "We priorities security above everything else, below you can change your password. We recommend using a strong password that you change regularly."),
+                "We priorities security above everything else, below you can change your password. We recommend using a strong password that you change regularly.",
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w300,
+                    color: Color(0xff666666))),
             Container(
               margin: EdgeInsets.only(top: 10),
               padding: EdgeInsets.all(20),
@@ -38,7 +48,12 @@ class _securityyState extends State<securityy> {
                   TextField(
                     decoration: InputDecoration(
                         hintText: "Current Password",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -46,8 +61,13 @@ class _securityyState extends State<securityy> {
                   ),
                   TextField(
                     decoration: InputDecoration(
-                        hintText: "Current Password",
+                        hintText: "New Password",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -55,25 +75,30 @@ class _securityyState extends State<securityy> {
                   ),
                   TextField(
                     decoration: InputDecoration(
-                        hintText: "Current Password",
+                        hintText: "Confirm Password",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   Container(
-                    height: 50,
-                    width: 300,
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(9),
                         gradient: colorssl()),
-                    child: Center(
-                        child: Text(
+                    child: Text(
                       "Confirm New Password",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   )
                 ],
               ),

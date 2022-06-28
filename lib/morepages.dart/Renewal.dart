@@ -28,9 +28,21 @@ class _renewallState extends State<renewall> {
           children: [
             Text(
               "Manage Renewals",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Color(0xff666666)),
             ),
-            Text("An overview of your upcoming service renewals."),
+            SizedBox(
+              height: 6,
+            ),
+            Text(
+              "An overview of your upcoming service renewals.",
+              style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w300,
+                  color: Color(0xff666666)),
+            ),
             Container(
                 margin: EdgeInsets.only(top: 10),
                 padding: EdgeInsets.only(bottom: 10),
@@ -40,12 +52,12 @@ class _renewallState extends State<renewall> {
                 child: Column(
                   children: [
                     InkWell(
-                        child: roww2("Hosting", "Next Due Date : 28-8-2022")),
+                        child: roww2(
+                            "Hosting", "Next Due Date : 28-8-2022", false)),
                     Divider(),
-                    roww2("Domain Name", "Next Due Date : 28-8-2022"),
+                    roww2("Domain Name", "Next Due Date : 28-8-2022", false),
                     Divider(),
-                    roww2("Updating Time",
-                        "Next Due Date : 28-8-2022\nTime Reminding : 12 Hours"),
+                    roww2("Updating Time", "Next Due Date : 28-8-2022", true),
                   ],
                 )),
             SizedBox(
@@ -283,7 +295,7 @@ class _renewallState extends State<renewall> {
             ),
           ));
 
-  Widget roww2(String head, String sub) => Padding(
+  Widget roww2(String head, String sub, bool a) => Padding(
         padding: const EdgeInsets.only(left: 10, top: 8, bottom: 8),
         child: InkWell(
           onTap: () => showrenewal(),
@@ -291,6 +303,7 @@ class _renewallState extends State<renewall> {
             children: [
               Expanded(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     Row(
@@ -299,7 +312,9 @@ class _renewallState extends State<renewall> {
                         Text(
                           head,
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff444444)),
                         ),
                         Spacer(),
                         Text(
@@ -319,22 +334,29 @@ class _renewallState extends State<renewall> {
                             height: 25,
                             width: 60,
                             decoration: BoxDecoration(
-                                color: Colors.blue[200],
+                                color: Color(0xff67CFE5),
                                 borderRadius: BorderRadius.circular(7)),
-                            child: Center(child: Text("Active")),
+                            child: Center(
+                                child: Text(
+                              "Active",
+                              style: TextStyle(color: Colors.white),
+                            )),
                           ),
                           Container(
                             margin: EdgeInsets.only(left: 10),
                             height: 25,
                             width: 60,
                             decoration: BoxDecoration(
-                                color: Colors.red,
+                                color: Color(0xffE56767),
                                 borderRadius: BorderRadius.circular(7)),
-                            child: Center(child: Text("Cancel")),
+                            child: Center(
+                                child: Text("Cancel",
+                                    style: TextStyle(color: Colors.white))),
                           ),
                         ],
                       ),
-                    )
+                    ),
+                    a == true ? Text("Time Reminding : 12 Hours") : SizedBox(),
                   ],
                 ),
               ),

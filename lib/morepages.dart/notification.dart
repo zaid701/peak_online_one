@@ -2,8 +2,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/more/notificationdetail.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
@@ -37,12 +35,20 @@ class _notificationState extends State<notification> {
                       Text(
                         "Ticket Notifications",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Color(0xff666666)),
                       ),
                       SizedBox(
                         height: 5,
                       ),
-                      Text("View your past email notifications"),
+                      Text(
+                        "View your past email notifications",
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w300,
+                            color: Color(0xff666666)),
+                      ),
                     ],
                   ),
                 ),
@@ -156,7 +162,10 @@ class _notificationState extends State<notification> {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              Text("Your Ticket has closed"),
+              Text(
+                "Your Ticket has closed",
+                style: TextStyle(color: Color(0xff666666)),
+              ),
               Spacer(),
               Text(
                 "31-01-2022",

@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -25,9 +27,20 @@ class _contactState extends State<contact> {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text("Contact Details",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color(0xff666666))),
+            SizedBox(
+              height: 6,
+            ),
             Text(
-                "View or update your contact details. Please note that we (and the registries and organisations we use) require accurate, up to date contact details to be held on file at all times. The email address you specify below is required to sign in to Peak Online Support"),
+              "View or update your contact details. Please note that we (and the registries and organisations we use) require accurate, up to date contact details to be held on file at all times. The email address you specify below is required to sign in to Peak Online Support",
+              style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w300,
+                  color: Color(0xff666666)),
+            ),
             Container(
               margin: EdgeInsets.only(top: 10),
               padding: EdgeInsets.all(20),
@@ -45,8 +58,13 @@ class _contactState extends State<contact> {
                   ),
                   TextField(
                     decoration: InputDecoration(
+                        fillColor: Color(0xffEEEEEE),
+                        filled: true,
                         hintText: "Full Name",
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -56,7 +74,12 @@ class _contactState extends State<contact> {
                     decoration: InputDecoration(
                         icon: FaIcon(FontAwesomeIcons.flagUsa),
                         hintText: "Country",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -65,7 +88,12 @@ class _contactState extends State<contact> {
                   TextField(
                     decoration: InputDecoration(
                         hintText: "Email Address",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -78,7 +106,12 @@ class _contactState extends State<contact> {
                   TextField(
                     decoration: InputDecoration(
                         hintText: "Phone Number",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -87,7 +120,12 @@ class _contactState extends State<contact> {
                   TextField(
                     decoration: InputDecoration(
                         hintText: "Address Line1",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -96,7 +134,12 @@ class _contactState extends State<contact> {
                   TextField(
                     decoration: InputDecoration(
                         hintText: "Address Line2",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -105,7 +148,12 @@ class _contactState extends State<contact> {
                   TextField(
                     decoration: InputDecoration(
                         hintText: "Address Line3",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -114,7 +162,12 @@ class _contactState extends State<contact> {
                   TextField(
                     decoration: InputDecoration(
                         hintText: "City",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -123,7 +176,12 @@ class _contactState extends State<contact> {
                   TextField(
                     decoration: InputDecoration(
                         hintText: "Country/State/Province",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -132,7 +190,12 @@ class _contactState extends State<contact> {
                   TextField(
                     decoration: InputDecoration(
                         hintText: "PostCode",
+                        filled: true,
+                        fillColor: Color(0xffEEEEEE),
+                        contentPadding: EdgeInsets.only(left: 28),
+                        hintStyle: TextStyle(color: Color(0xffB7B7BD)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffC6CACE)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -140,17 +203,16 @@ class _contactState extends State<contact> {
                   ),
                   Center(
                     child: Container(
-                      height: 50,
-                      width: 300,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(9),
                           gradient: colorssl()),
-                      child: Center(
-                          child: Text(
+                      child: Text(
                         "Update Details",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.white),
-                      )),
+                      ),
                     ),
                   )
                 ],
