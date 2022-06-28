@@ -17,7 +17,7 @@ class _allnotificationState extends State<allnotification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Notifications"),
         backgroundColor: Color(0xff95BB65),
@@ -86,12 +86,52 @@ class _allnotificationState extends State<allnotification> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(
-                    onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleLeft)),
-                Text("1"),
-                IconButton(
-                    onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.angleRight)),
+                Container(
+                  height: 35,
+                  width: 35,
+                  // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Color(0xff95BB65), width: 2)),
+                  child: Center(
+                    child: InkWell(
+                      onTap: () {},
+                      child: FaIcon(
+                        FontAwesomeIcons.angleLeft,
+                        size: 22,
+                        color: Color(0xff95BB65),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "1",
+                  style: TextStyle(fontSize: 20),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  height: 35,
+                  width: 35,
+                  // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Color(0xff95BB65), width: 2)),
+                  child: Center(
+                    child: InkWell(
+                      onTap: () {},
+                      child: FaIcon(
+                        FontAwesomeIcons.angleRight,
+                        size: 22,
+                        color: Color(0xff95BB65),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
             SizedBox(

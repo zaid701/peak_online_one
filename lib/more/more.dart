@@ -17,7 +17,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 class morepage extends StatefulWidget {
   final BuildContext Maincon;
   final PersistentTabController controller;
-  const morepage({Key? key, required this.controller, required this.Maincon}) : super(key: key);
+  const morepage({Key? key, required this.controller, required this.Maincon})
+      : super(key: key);
 
   @override
   State<morepage> createState() => _morepageState();
@@ -29,7 +30,7 @@ class _morepageState extends State<morepage> {
     ScrollController _scrollController = ScrollController();
     return Scaffold(
       appBar: appbar1(context, widget.controller, "More", true),
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       body: OrientationBuilder(
         builder: (context, orientation) => Container(
             margin: EdgeInsets.all(15),
@@ -184,8 +185,7 @@ class _morepageState extends State<morepage> {
             // ignore: prefer_const_literals_to_create_immutables
             boxShadow: [
               BoxShadow(
-                color: Colors.grey,
-                spreadRadius: 1,
+                color: Colors.grey.shade300,
                 blurRadius: 5,
               )
             ]),

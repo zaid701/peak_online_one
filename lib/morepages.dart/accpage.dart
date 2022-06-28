@@ -6,6 +6,9 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../icongred.dart';
+import '../main.dart';
+
 class accpage extends StatefulWidget {
   final PageController pg;
   const accpage({Key? key, required PageController this.pg}) : super(key: key);
@@ -57,22 +60,18 @@ class _accpageState extends State<accpage> {
                     shrinkWrap: true,
                     padding: EdgeInsets.only(top: 5, bottom: 10),
                     children: [
-                      it(Icon(FaIcon(FontAwesomeIcons.calendar).icon),
-                          "Renewals", 1),
-                      it(Icon(FaIcon(FontAwesomeIcons.handshake).icon), "SLA",
-                          4),
-                      it(Icon(FaIcon(FontAwesomeIcons.database).icon), "Data",
-                          5),
-                      it(Icon(FaIcon(FontAwesomeIcons.peopleGroup).icon),
-                          "Group", 6),
+                      it(Icons.calendar_today, "Renewals", 1),
+                      it(Icons.handshake, "SLA", 4),
+                      it(Icons.data_thresholding, "Data", 5),
+                      it(Icons.groups, "Group", 6),
                     ],
                   ),
                 ],
               ),
             )));
-  } 
+  }
 
-  Widget it(Icon i, String name, int i2) {
+  Widget it(IconData i, String name, int i2) {
     return InkWell(
       onTap: () => widget.pg.jumpToPage(i2),
       child: Container(
@@ -84,8 +83,7 @@ class _accpageState extends State<accpage> {
             // ignore: prefer_const_literals_to_create_immutables
             boxShadow: [
               BoxShadow(
-                color: Colors.grey,
-                spreadRadius: 1,
+                color: Colors.grey.shade300,
                 blurRadius: 5,
               )
             ]),
@@ -95,7 +93,7 @@ class _accpageState extends State<accpage> {
           children: [
             Row(
               children: [
-                i,
+                GradientIcon(i, colorssl()),
                 Spacer(),
                 CircleAvatar(
                   backgroundColor: Colors.green.shade900,

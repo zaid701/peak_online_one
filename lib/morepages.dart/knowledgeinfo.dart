@@ -15,7 +15,7 @@ class _knowledgeinfoState extends State<knowledgeinfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Knowledge Bases"),
         backgroundColor: Color(0xff95BB65),

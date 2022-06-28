@@ -71,7 +71,8 @@ class _securityyState extends State<securityy> {
                     child: Center(
                         child: Text(
                       "Confirm New Password",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
                     )),
                   )
                 ],

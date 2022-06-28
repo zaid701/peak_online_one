@@ -148,7 +148,8 @@ class _contactState extends State<contact> {
                       child: Center(
                           child: Text(
                         "Update Details",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
                       )),
                     ),
                   )

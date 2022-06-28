@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../main.dart';
+
 class preference extends StatefulWidget {
   const preference({Key? key}) : super(key: key);
 
@@ -133,8 +135,17 @@ class _preferenceState extends State<preference> {
                       height: 20,
                     ),
                     Center(
-                        child: ElevatedButton(
-                            onPressed: () {}, child: Text("Save"))),
+                        child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 20),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(9),
+                              gradient: colorssl(),
+                            ),
+                            child: Text(
+                              "Save",
+                              style: TextStyle(color: Colors.white),
+                            ))),
                   ],
                 ),
               ),

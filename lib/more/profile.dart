@@ -59,7 +59,7 @@ class _profileeState extends State<profilee> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appbar2(context, b[tb.index]),
-      backgroundColor: Color.fromARGB(255, 242, 241, 241),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Padding(
@@ -101,7 +101,9 @@ class _profileeState extends State<profilee> with TickerProviderStateMixin {
                 SLCPAGE(),
                 Groupspage(),
                 preference(),
-                notification(pg: pageController,),
+                notification(
+                  pg: pageController,
+                ),
               ],
               controller: pageController,
               onPageChanged: (int i) => setState(() {

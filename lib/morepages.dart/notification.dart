@@ -93,11 +93,52 @@ class _notificationState extends State<notification> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleLeft)),
-              Text("1"),
-              IconButton(
-                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleRight)),
+              Container(
+                height: 35,
+                width: 35,
+                // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Color(0xff95BB65), width: 2)),
+                child: Center(
+                  child: InkWell(
+                    onTap: () {},
+                    child: FaIcon(
+                      FontAwesomeIcons.angleLeft,
+                      size: 22,
+                      color: Color(0xff95BB65),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "1",
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Container(
+                height: 35,
+                width: 35,
+                // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Color(0xff95BB65), width: 2)),
+                child: Center(
+                  child: InkWell(
+                    onTap: () {},
+                    child: FaIcon(
+                      FontAwesomeIcons.angleRight,
+                      size: 22,
+                      color: Color(0xff95BB65),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
           SizedBox(
