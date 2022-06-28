@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/main.dart';
 
@@ -29,6 +30,7 @@ class _perchatState extends State<perchat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Color(0xff95BB65),
         leadingWidth: 30,
@@ -83,12 +85,13 @@ class _perchatState extends State<perchat> {
               child: Row(
                 children: [
                   IconButton(
-                      onPressed: () {}, icon: FaIcon(FontAwesomeIcons.image)),
+                      onPressed: () {},
+                      icon: SvgPicture.asset("asset/gallery.svg")),
                   Expanded(
                       child: TextField(
                     decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[200],
+                        fillColor: Color(0xffF5F5F5),
                         contentPadding: EdgeInsets.only(
                             left: 15, bottom: 11, top: 11, right: 15),
                         border: OutlineInputBorder(
@@ -96,17 +99,23 @@ class _perchatState extends State<perchat> {
                             width: 0,
                             style: BorderStyle.none,
                           ),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         hintText: "Type A Massege..",
                         hintStyle: TextStyle(color: Colors.black)),
                   )),
                   IconButton(
-                      onPressed: () {},
-                      icon: FaIcon(
-                        FontAwesomeIcons.telegram,
-                        size: 30,
-                      )),
+                    onPressed: () {},
+                    icon: ShaderMask(
+                      blendMode: BlendMode.srcIn,
+                      shaderCallback: (bounds) =>
+                          colorssl().createShader(bounds),
+                      child: SvgPicture.asset(
+                        "asset/endchat.svg",
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -125,15 +134,17 @@ Widget chats(int i, String msg) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15),
-                      bottomRight: Radius.circular(15)),
-                  color: Colors.grey[200],
-                ),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                        bottomRight: Radius.circular(15)),
+                    color: Color(0xffF5F5F5)),
                 child: Text(msg),
+              ),
+              SizedBox(
+                height: 10,
               ),
               Text(
                 "12:00 PM",
@@ -147,7 +158,7 @@ Widget chats(int i, String msg) {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(15),
@@ -155,7 +166,13 @@ Widget chats(int i, String msg) {
                       bottomLeft: Radius.circular(15)),
                   gradient: colorssl(),
                 ),
-                child: Text(msg),
+                child: Text(
+                  msg,
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              SizedBox(
+                height: 10,
               ),
               Text(
                 "12:00 PM",

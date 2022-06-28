@@ -25,10 +25,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  
   @override
   void initState() {
-    
     super.initState();
   }
 
@@ -38,14 +36,12 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(primarySwatch: Colors.green, fontFamily: "Roboto"),
       debugShowCheckedModeBanner: false,
       routes: {
-        'abd' :((context) => Signin()),
-        'home' :((context) => Home_Page()),
+        'abd': ((context) => Signin()),
+        'home': ((context) => Home_Page()),
       },
-     home:splace(),
+      home: splace(),
     );
   }
-
- 
 }
 
 MaterialColor buildMaterialColor(Color color) {
@@ -72,7 +68,7 @@ LinearGradient colorssl() => LinearGradient(
       // ignore: prefer_const_literals_to_create_immutables
       colors: [
         Color(0xff67CFE5),
-        Color(0xff5CA500),
+        Color(0xff5BA400),
       ],
       // ignore: prefer_const_literals_to_create_immutables
       //tileMode: TileMode.decal,

@@ -33,9 +33,7 @@ class _splaceState extends State<splace> {
   getdata() async {
     final pref = await SharedPreferences.getInstance();
     String? b = pref.getString("signed");
-    Fluttertoast.showToast(msg: b.toString());
     this.a = b.toString();
-    Fluttertoast.showToast(msg: a);
   }
 
   @override

@@ -19,13 +19,13 @@ class _createticketState extends State<createticket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: appbar2(context, "Create Ticket"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 30),
           decoration: BoxDecoration(
               color: Color(0xFFF7F9FC),
               borderRadius: BorderRadius.circular(15)),
@@ -34,14 +34,15 @@ class _createticketState extends State<createticket> {
             // ignore: prefer_const_literals_to_create_immutables
             children: [
               Text("What's happening with your Peak Online package?",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14)),
               SizedBox(
                 height: 10,
               ),
               Text(
-                  "Select the issue your query relates to. This will help our team provide quick and effective support."),
+                  "Select the issue your query relates to. This will help our team provide quick and effective support.",
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12)),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Text("Select issue Type"),
               SizedBox(
@@ -145,10 +146,11 @@ class _createticketState extends State<createticket> {
                 padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: Colors.green),
+                    gradient: colorssl()),
                 child: Text(
                   "Update Details",
-                  style: TextStyle(fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500, color: Colors.white),
                 ),
               )),
               SizedBox(

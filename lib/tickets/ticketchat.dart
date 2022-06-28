@@ -3,13 +3,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peak_online_one/main.dart';
+import 'package:peak_online_one/model/ticketmodel.dart';
 
 import '../Home_Screenpages/perchat.dart';
 
 class tickectchat extends StatefulWidget {
-  const tickectchat({Key? key}) : super(key: key);
+  final PaginateData ticketdata;
+  const tickectchat({Key? key, required this.ticketdata}) : super(key: key);
 
   @override
   State<tickectchat> createState() => _tickectchatState();
@@ -23,15 +26,23 @@ class _tickectchatState extends State<tickectchat> {
     "Sure 10am tomorrow",
     "Sed ut perspiciatis un. Ist"
   ];
+
   @override
   Widget build(BuildContext context) {
+    String priority = "High";
+    int prio = widget.ticketdata.priorityId as int;
+    if (prio == 1) {
+      priority = "Low";
+    } else if (prio == 2) {
+      priority = "Medium";
+    }
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: appbar2(context, "Ticket"),
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -43,9 +54,9 @@ class _tickectchatState extends State<tickectchat> {
                             fontWeight: FontWeight.bold, fontSize: 14)),
                     Spacer(),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 3),
+                      padding: EdgeInsets.symmetric(horizontal: 8),
                       height: 25,
-                      width: 70,
+                      width: 80,
                       decoration: BoxDecoration(
                           color: Color(0xFF6C757D),
                           borderRadius: BorderRadius.circular(4)),
@@ -60,7 +71,7 @@ class _tickectchatState extends State<tickectchat> {
                     )
                   ],
                 ),
-                Text("Ticket Id: #43"),
+                Text("Ticket Id: #${widget.ticketdata.id}"),
                 SizedBox(
                   height: 10,
                 ),
@@ -74,7 +85,7 @@ class _tickectchatState extends State<tickectchat> {
                       Row(
                         // ignore: prefer_const_literals_to_create_immutables
                         children: [
-                          Text("Unable to login to email or website",
+                          Text(widget.ticketdata.categoryName.toString(),
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 12)),
                           Spacer(),
@@ -147,24 +158,39 @@ class _tickectchatState extends State<tickectchat> {
                 children: [
                   IconButton(
                       onPressed: () {},
-                      icon: FaIcon(FontAwesomeIcons.paperclip)),
+                      icon: FaIcon(
+                        FontAwesomeIcons.paperclip,
+                        color: Color(0xff495057),
+                      )),
                   Expanded(
                       child: TextField(
                     decoration: InputDecoration(
                         filled: true,
-                        fillColor: Colors.grey[200],
+                        fillColor: Color(0xffF5F5F5),
+                        contentPadding: EdgeInsets.only(
+                            left: 15, bottom: 11, top: 11, right: 15),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
+                          borderSide: BorderSide(
+                            width: 0,
+                            style: BorderStyle.none,
+                          ),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         hintText: "Ticket Comments",
                         hintStyle: TextStyle(color: Colors.black)),
                   )),
                   IconButton(
-                      onPressed: () {},
-                      icon: FaIcon(
-                        FontAwesomeIcons.telegram,
-                        size: 30,
-                      )),
+                    onPressed: () {},
+                    icon: ShaderMask(
+                      blendMode: BlendMode.srcIn,
+                      shaderCallback: (bounds) =>
+                          colorssl().createShader(bounds),
+                      child: SvgPicture.asset(
+                        "asset/endchat.svg",
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

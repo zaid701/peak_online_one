@@ -84,11 +84,13 @@ class _Home_PageState extends State<Home_Page> {
           controller: _controller,
         ),
         morepage(
-          controller: _controller,Maincon: context,
+          controller: _controller,
+          Maincon: context,
         ),
       ],
       items: _navBarsItems(),
       navBarHeight: 60,
+
       confineInSafeArea: true,
       backgroundColor: Colors.white, // Default is Colors.white.
       handleAndroidBackButtonPress: true, // Default is true.
@@ -98,24 +100,26 @@ class _Home_PageState extends State<Home_Page> {
       hideNavigationBarWhenKeyboardShows:
           true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
       decoration: NavBarDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        colorBehindNavBar: Colors.white,
+        boxShadow: [BoxShadow(blurRadius: 20, color: Colors.grey.shade400)],
+        //borderRadius: BorderRadius.circular(1),
       ),
       popAllScreensOnTapOfSelectedTab: true,
+
       popActionScreens: PopActionScreensType.all,
       itemAnimationProperties: ItemAnimationProperties(
         // Navigation Bar's items animation properties.
-        duration: Duration(milliseconds: 200),
-        curve: Curves.ease,
+
+        duration: Duration(milliseconds: 1),
+        curve: Curves.easeIn,
       ),
       screenTransitionAnimation: ScreenTransitionAnimation(
         // Screen transition animation on change of selected tab.
         animateTabTransition: true,
         curve: Curves.ease,
-        duration: Duration(milliseconds: 200),
+        duration: Duration(milliseconds: 100),
       ),
-      navBarStyle:
-          NavBarStyle.style6, // Choose the nav bar style with this property.
+      navBarStyle: NavBarStyle.simple,
+      // Choose the nav bar style with this property.
     );
   }
 }

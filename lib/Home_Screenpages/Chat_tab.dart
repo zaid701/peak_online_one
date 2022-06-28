@@ -49,7 +49,7 @@ class _Chat_pageState extends State<Chat_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffE5E5E5),
+        backgroundColor: Colors.white,
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Color(0xff95BB65),
@@ -92,26 +92,24 @@ class _Chat_pageState extends State<Chat_page> {
                 itemCount: auto.data!.users?.length,
                 itemBuilder: (context, index) {
                   Users ur = auto.data!.users![index];
-                  return chattabs(ur.name.toString(),ur.profileUrl.toString());
+                  return chattabs(ur.name.toString(), ur.profileUrl.toString());
                 },
               ));
   }
 
   Widget loadchattab() => Container(
+        height: 70,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color: Colors.white,
+            color: Color(0xffF7F9FC),
             // ignore: prefer_const_literals_to_create_immutables
             boxShadow: [
               BoxShadow(
-                blurStyle: BlurStyle.normal,
+                blurRadius: 10,
                 color: Colors.grey,
-                spreadRadius: 1,
-                blurRadius: 2,
-                offset: Offset(0, 2),
               )
             ]),
-        margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+        margin: EdgeInsets.only(top: 15, left: 10, right: 10),
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Row(
@@ -141,21 +139,14 @@ class _Chat_pageState extends State<Chat_page> {
           ),
         ),
       );
-  Widget chattabs(String title,String img) => Container(
+  Widget chattabs(String title, String img) => Container(
+        height: 70,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.white,
-            // ignore: prefer_const_literals_to_create_immutables
-            boxShadow: [
-              BoxShadow(
-                blurStyle: BlurStyle.normal,
-                color: Colors.grey,
-                spreadRadius: 1,
-                blurRadius: 2,
-                offset: Offset(0, 2),
-              )
-            ]),
-        margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+          borderRadius: BorderRadius.circular(15),
+          color: Color(0xffF7F9FC),
+          // ignore: prefer_const_literals_to_create_immutables
+        ),
+        margin: EdgeInsets.only(top: 15, left: 10, right: 10),
         child: InkWell(
           onTap: (() {
             pushNewScreen(
@@ -174,49 +165,62 @@ class _Chat_pageState extends State<Chat_page> {
                   alignment: Alignment.topLeft,
                   children: [
                     CircleAvatar(
-                      radius: 28,
-                      foregroundImage: Image.network(                        
-                        "http://44.234.205.222/peakonline"+img,
+                      radius: 25,
+                      foregroundImage: Image.network(
+                        "http://44.234.205.222/peakonline" + img,
                         fit: BoxFit.cover,
                       ).image,
                     ),
                     Container(
                         height: 15,
                         width: 15,
+                        padding: EdgeInsets.all(2),
                         decoration: BoxDecoration(
                           gradient: colorssl(),
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        child: FittedBox(child: Text("2")))
+                        child: FittedBox(
+                            child: Text(
+                          "2",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        )))
                   ],
                 ),
+                SizedBox(
+                  width: 8,
+                ),
                 Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Row(
-                          // ignore: prefer_const_literals_to_create_immutables
-                          children: [
-                            Text(
-                              title,
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Spacer(),
-                            Text("04:46 pm")
-                          ],
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          "xjhcvbhsdbvjsdhhsdhfsdfisljhiggbujkghcdziuuubu",
-                          overflow: TextOverflow.ellipsis,
-                        )
-                      ],
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          Text(
+                            title,
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: Colors.black),
+                          ),
+                          Spacer(),
+                          Text("04:46 pm")
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "xjhcvbhsdbvjsdhhsdhfsdfisljhiggbujkghcdziuuubu",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 11,
+                            color: Colors.black),
+                        overflow: TextOverflow.ellipsis,
+                      )
+                    ],
                   ),
                 ),
               ],
