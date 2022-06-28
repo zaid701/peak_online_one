@@ -19,7 +19,7 @@ class _quotebyadminState extends State<quotebyadmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: appbar2(context, "Quote By Admin"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -28,7 +28,7 @@ class _quotebyadminState extends State<quotebyadmin> {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(17),
               child: Text("Quote By Admin",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
             ),
@@ -48,14 +48,14 @@ class _quotebyadminState extends State<quotebyadmin> {
                     children: [
                       Text("Service: ",
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 14)),
+                              fontWeight: FontWeight.w500, fontSize: 14)),
                       Text("Graphic Design",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 14)),
+                              fontWeight: FontWeight.w600, fontSize: 14)),
                       Spacer(),
                       Text("Price: 150.00",
                           style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 11)),
+                              fontWeight: FontWeight.w500, fontSize: 12)),
                     ],
                   ),
                   SizedBox(
@@ -64,8 +64,8 @@ class _quotebyadminState extends State<quotebyadmin> {
                   Text("Service Type: Logo Design and branding",
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 13,
-                          color: Colors.grey[800])),
+                          fontSize: 12,
+                          color: Color(0xff444444))),
                   SizedBox(
                     height: 10,
                   ),
@@ -74,44 +74,50 @@ class _quotebyadminState extends State<quotebyadmin> {
                     children: [
                       Text("Time Frame:",
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 13)),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13,
+                              color: Color(0xff444444))),
                       Text("18-03-2022",
                           style: TextStyle(
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.w300,
                               fontSize: 13,
-                              color: Colors.grey[800])),
+                              color: Color(0xff444444))),
                     ],
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text("Details:",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 13)),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          color: Color(0xff444444))),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
                       style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 11,
-                          color: Colors.grey[800])),
+                          fontWeight: FontWeight.w300,
+                          fontSize: 10,
+                          color: Color(0xff444444))),
                   SizedBox(
                     height: 10,
                   ),
                   Text("Requierments:",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 13)),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          color: Color(0xff444444))),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
                       style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 11,
-                          color: Colors.grey[800])),
+                          fontWeight: FontWeight.w300,
+                          fontSize: 10,
+                          color: Color(0xff444444))),
                   SizedBox(
                     height: 10,
                   ),
@@ -132,7 +138,7 @@ class _quotebyadminState extends State<quotebyadmin> {
                   ),
                   Text(
                     "Status*",
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                   ),
                   SizedBox(
                     height: 10,
@@ -141,7 +147,7 @@ class _quotebyadminState extends State<quotebyadmin> {
                     padding: EdgeInsets.only(left: 20, right: 20),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.grey)),
+                        border: Border.all(color: Color(0xffE2E6EB))),
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton(
                         isExpanded: true,
@@ -177,7 +183,8 @@ class _quotebyadminState extends State<quotebyadmin> {
                         gradient: colorssl()),
                     child: Text(
                       "Save",
-                      style: TextStyle(fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500, color: Colors.white),
                     ),
                   )),
                   SizedBox(

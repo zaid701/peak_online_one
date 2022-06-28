@@ -48,7 +48,7 @@ class _SigninState extends State<Signin> {
                     child: SvgPicture.asset("asset/Rect.svg")),
               ),
               CircleAvatar(
-                maxRadius: MediaQuery.of(context).size.width * 0.15,
+                radius: MediaQuery.of(context).size.width * 0.15,
                 backgroundColor: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.all(6.0),

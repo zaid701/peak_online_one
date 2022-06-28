@@ -25,7 +25,7 @@ class _quotespageState extends State<quotespage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: appbar1(context, widget.controller, "Quotes", false),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -42,22 +42,25 @@ class _quotespageState extends State<quotespage> {
                 ),
                 Text(
                   "Service Quotes",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
                 ),
                 SizedBox(
-                  width: 5,
+                  width: 15,
                 ),
                 Icon(
                   Icons.search,
+                  size: 20,
                 ),
                 Spacer(),
                 InkWell(
                   onTap: () => pushNewScreen(context,
                       screen: quotehistory(), withNavBar: true),
                   child: CircleAvatar(
+                    backgroundColor: Color(0xff95BB65),
                     child: FaIcon(
                       FontAwesomeIcons.history,
-                      size: 15,
+                      size: 16,
+                      color: Colors.white,
                     ),
                     radius: 12,
                   ),
@@ -69,10 +72,11 @@ class _quotespageState extends State<quotespage> {
                   onTap: () => pushNewScreen(context,
                       screen: createquote(), withNavBar: true),
                   child: CircleAvatar(
-                    backgroundColor: Colors.blueAccent,
+                    backgroundColor: Color(0xff67CFE9),
                     child: FaIcon(
                       FontAwesomeIcons.plus,
                       size: 15,
+                      color: Colors.white,
                     ),
                     radius: 12,
                   ),
@@ -104,12 +108,52 @@ class _quotespageState extends State<quotespage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(
-                    onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleLeft)),
-                Text("1"),
-                IconButton(
-                    onPressed: () {},
-                    icon: FaIcon(FontAwesomeIcons.angleRight)),
+                Container(
+                  height: 35,
+                  width: 35,
+                  // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Color(0xff95BB65), width: 2)),
+                  child: Center(
+                    child: InkWell(
+                      onTap: () {},
+                      child: FaIcon(
+                        FontAwesomeIcons.angleLeft,
+                        size: 22,
+                        color: Color(0xff95BB65),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "1",
+                  style: TextStyle(fontSize: 20),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  height: 35,
+                  width: 35,
+                  // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Color(0xff95BB65), width: 2)),
+                  child: Center(
+                    child: InkWell(
+                      onTap: () {},
+                      child: FaIcon(
+                        FontAwesomeIcons.angleRight,
+                        size: 22,
+                        color: Color(0xff95BB65),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
             SizedBox(
@@ -131,13 +175,17 @@ class _quotespageState extends State<quotespage> {
             // ignore: prefer_const_literals_to_create_immutables
             children: [
               Text("Digital Marketing",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                      color: Color(0xff444444))),
               Spacer(),
               InkWell(
                 onTap: () => pushNewScreen(context,
                     screen: editquote(), withNavBar: true),
                 child: FaIcon(
                   FontAwesomeIcons.edit,
+                  color: Color(0xff67CFE9),
                 ),
               ),
               SizedBox(
@@ -155,41 +203,61 @@ class _quotespageState extends State<quotespage> {
                   child: Center(
                       child: FittedBox(
                           child: Padding(
-                    padding: const EdgeInsets.all(2),
-                    child: Text("Qoute"),
-                  ))),
+                              padding: const EdgeInsets.all(2),
+                              child: Text(
+                                "Qoute",
+                                style: TextStyle(color: Colors.white),
+                              )))),
                 ),
               ),
             ],
           ),
           SizedBox(
-            height: 5,
+            height: 8,
           ),
-          Text("Service Type: Pay Per Click"),
+          Text("Service Type: Pay Per Click",
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  color: Color(0xff5A5A5E))),
           SizedBox(
-            height: 5,
+            height: 8,
           ),
           Row(
             // ignore: prefer_const_literals_to_create_immutables
             children: [
               Text("Time Frame:",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
-              Text("18-03-2022", style: TextStyle(fontSize: 12))
+                  style: TextStyle(
+                      color: Color(0xff444444),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12)),
+              Text("18-03-2022",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 12,
+                    color: Color(0xff444444),
+                  ))
             ],
           ),
           SizedBox(
-            height: 5,
+            height: 8,
           ),
           Text("Requierments:",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+              style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12,
+                  color: Color(0xff444444))),
           SizedBox(
-            height: 5,
+            height: 8,
           ),
           Text(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
-              style: TextStyle(fontSize: 12)),
+              style: TextStyle(
+                  fontWeight: FontWeight.w300,
+                  fontSize: 10,
+                  color: Color(0xff444444))),
           SizedBox(
-            height: 10,
+            height: 16,
           )
         ],
       );

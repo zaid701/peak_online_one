@@ -22,7 +22,7 @@ class _editquoteState extends State<editquote> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: appbar2(context, "Edit Quote"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -140,7 +140,7 @@ class _editquoteState extends State<editquote> {
                     keyboardType: TextInputType.multiline,
                     maxLines: 7,
                     decoration: InputDecoration(
-                        fillColor: Colors.grey[200],
+                        fillColor: Color(0xffEEEEEE),
                         filled: true,
                         hintText:
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
@@ -191,7 +191,7 @@ class _editquoteState extends State<editquote> {
                       child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(9),
                         gradient: colorssl()),
                     child: Text(
                       "Submit Quote",

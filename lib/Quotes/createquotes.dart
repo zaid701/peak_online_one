@@ -19,7 +19,7 @@ class _createquoteState extends State<createquote> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: appbar2(context, "Create New Quote"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -186,7 +186,7 @@ class _createquoteState extends State<createquote> {
                       child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(9),
                         gradient: colorssl()),
                     child: Text(
                       "Submit Quote",
