@@ -81,7 +81,14 @@ class _ticketsState extends State<tickets> {
                   child: Column(
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      Text("Open"),
+                      Text(
+                        "Open",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400, fontSize: 15),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
                       Text(
                         open.toString(),
                         style: TextStyle(color: Colors.red, fontSize: 20),
@@ -101,7 +108,14 @@ class _ticketsState extends State<tickets> {
                   child: Column(
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      Text("In Progress"),
+                      Text(
+                        "In Progress",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400, fontSize: 15),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
                       Text(
                         progress.toString(),
                         style: TextStyle(color: Colors.blue, fontSize: 20),
@@ -121,7 +135,14 @@ class _ticketsState extends State<tickets> {
                   child: Column(
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      Text("Closed"),
+                      Text(
+                        "Closed",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400, fontSize: 15),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
                       Text(
                         close.toString(),
                         style: TextStyle(color: Colors.green, fontSize: 20),
@@ -363,9 +384,12 @@ Widget ticketrow(BuildContext context, Ticketdata auto, int index) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(ur.title.toString(),
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                      color: Color(0xff444444))),
               SizedBox(
-                height: 5,
+                height: 8,
               ),
               Row(
                 children: [
@@ -377,15 +401,15 @@ Widget ticketrow(BuildContext context, Ticketdata auto, int index) {
                             style: TextStyle(
                                 color: Colors.grey[600], fontSize: 14)),
                         SizedBox(
-                          height: 5,
+                          height: 8,
                         ),
                         Text(task,
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12,
                                 color: task == "Awaiting your reply"
                                     ? Color(0xff75D3EB)
-                                    : Colors.black)),
+                                    : Color(0xff444444))),
                       ],
                     ),
                   ),

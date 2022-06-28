@@ -141,7 +141,9 @@ Widget chats(int i, String msg) {
                         topRight: Radius.circular(15),
                         bottomRight: Radius.circular(15)),
                     color: Color(0xffF5F5F5)),
-                child: Text(msg),
+                child: Text(msg,
+                    style:
+                        TextStyle(fontSize: 13, fontWeight: FontWeight.w500)),
               ),
               SizedBox(
                 height: 10,
@@ -168,16 +170,17 @@ Widget chats(int i, String msg) {
                 ),
                 child: Text(
                   msg,
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
                 ),
               ),
               SizedBox(
                 height: 10,
               ),
-              Text(
-                "12:00 PM",
-                style: TextStyle(fontSize: 10),
-              )
+              Text("12:00 PM",
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500))
             ],
           ));
 }
