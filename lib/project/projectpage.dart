@@ -22,15 +22,13 @@ class _projectpageState extends State<projectpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: appbar1(context, widget.controller, "Projects", false),
       body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              SizedBox(
-                height: 15,
-              ),
+              SizedBox(height: 22),
               Row(
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
@@ -39,11 +37,12 @@ class _projectpageState extends State<projectpage> {
                   ),
                   Text(
                     "Projects",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
                   ),
                   Spacer(),
                   Icon(
                     Icons.search,
+                    size: 23,
                   ),
                   SizedBox(
                     width: 20,
@@ -75,13 +74,52 @@ class _projectpageState extends State<projectpage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: FaIcon(FontAwesomeIcons.angleLeft)),
-                  Text("1"),
-                  IconButton(
-                      onPressed: () {},
-                      icon: FaIcon(FontAwesomeIcons.angleRight)),
+                  Container(
+                    height: 35,
+                    width: 35,
+                    // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(color: Color(0xff95BB65), width: 2)),
+                    child: Center(
+                      child: InkWell(
+                        onTap: () {},
+                        child: FaIcon(
+                          FontAwesomeIcons.angleLeft,
+                          size: 22,
+                          color: Color(0xff95BB65),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "1",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    height: 35,
+                    width: 35,
+                    // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(color: Color(0xff95BB65), width: 2)),
+                    child: Center(
+                      child: InkWell(
+                        onTap: () {},
+                        child: FaIcon(
+                          FontAwesomeIcons.angleRight,
+                          size: 22,
+                          color: Color(0xff95BB65),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
               SizedBox(
@@ -102,28 +140,32 @@ class _projectpageState extends State<projectpage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 10,
+                    height: 17,
                   ),
                   Row(
                     // ignore: prefer_const_literals_to_create_immutables
 
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      Text("Web Design And Apps",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 15)),
+                      Text(
+                        "Web Design And Apps",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 14),
+                      ),
                       Spacer(),
                       Text("Status:",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 12)),
-                      Text(" Accept", style: TextStyle(fontSize: 12)),
+                              fontWeight: FontWeight.w700, fontSize: 12)),
+                      Text(" Accept",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400, fontSize: 12)),
                       SizedBox(
                         width: 5,
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 11,
                   ),
                   Row(
                     children: [
@@ -136,14 +178,16 @@ class _projectpageState extends State<projectpage> {
                         children: [
                           Text(
                             "Start Date: 04-03-2022",
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400, fontSize: 12),
                           ),
                           SizedBox(
-                            height: 5,
+                            height: 8,
                           ),
                           Text(
                             "Target Completion Date: 19-03-2022 ",
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400, fontSize: 12),
                           ),
                         ],
                       ),
@@ -161,14 +205,17 @@ class _projectpageState extends State<projectpage> {
                               child: FittedBox(
                                   child: Padding(
                             padding: const EdgeInsets.all(2),
-                            child: Text("Edit"),
+                            child: Text(
+                              "Edit",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ))),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                 ],
               ),

@@ -19,7 +19,7 @@ class _editprojectdetailsState extends State<editprojectdetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: appbar2(context, "Project"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -28,13 +28,16 @@ class _editprojectdetailsState extends State<editprojectdetails> {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 15),
               child: Text(
                 "Edit Project Details",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
+                    color: Color(0xff666666)),
               ),
             ),
             Container(
@@ -49,14 +52,20 @@ class _editprojectdetailsState extends State<editprojectdetails> {
                 children: [
                   Text(
                     "Project Name : Web Design And Appss",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                        color: Color(0xff666666)),
                   ),
                   SizedBox(
-                    height: 15,
+                    height: 20,
                   ),
                   Text(
                     "Status*",
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
+                        color: Color(0xff666666)),
                   ),
                   SizedBox(
                     height: 10,
@@ -64,8 +73,8 @@ class _editprojectdetailsState extends State<editprojectdetails> {
                   Container(
                     padding: EdgeInsets.only(left: 20, right: 20),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.grey)),
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(color: Color(0xffE2E6EB))),
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton(
                         isExpanded: true,
@@ -79,7 +88,13 @@ class _editprojectdetailsState extends State<editprojectdetails> {
                         items: items.map((String items) {
                           return DropdownMenuItem(
                             value: items,
-                            child: Text(items),
+                            child: Text(
+                              items,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  color: Color(0xff495057)),
+                            ),
                           );
                         }).toList(),
                         onChanged: (String? newValue) {
@@ -95,17 +110,26 @@ class _editprojectdetailsState extends State<editprojectdetails> {
                   ),
                   Text(
                     "Start Date*",
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
+                        color: Color(0xff666666)),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   TextField(
                     decoration: InputDecoration(
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 0, horizontal: 16),
                         suffixIcon: Icon(Icons.calendar_month),
                         hintText: "2022-03-04",
-                        hintStyle: TextStyle(fontSize: 13),
+                        hintStyle: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: Color(0xff495057)),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffE2E6EB)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -120,10 +144,13 @@ class _editprojectdetailsState extends State<editprojectdetails> {
                   ),
                   TextField(
                     decoration: InputDecoration(
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 0, horizontal: 16),
                         suffixIcon: Icon(Icons.calendar_month),
                         hintText: "2022-03-19",
                         hintStyle: TextStyle(fontSize: 13),
                         border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffE2E6EB)),
                             borderRadius: BorderRadius.circular(10))),
                   ),
                   SizedBox(
@@ -131,13 +158,17 @@ class _editprojectdetailsState extends State<editprojectdetails> {
                   ),
                   Center(
                       child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(9),
                         gradient: colorssl()),
                     child: Text(
                       "Update",
-                      style: TextStyle(fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
+                        color: Colors.white,
+                      ),
                     ),
                   )),
                   SizedBox(

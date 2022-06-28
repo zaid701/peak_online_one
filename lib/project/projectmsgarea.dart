@@ -1,7 +1,11 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:peak_online_one/Home_Screenpages/perchat.dart';
 
 import '../main.dart';
 
@@ -23,99 +27,60 @@ class _projectmsgareaState extends State<projectmsgarea> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
-      body: Column(
-        children: [
-          Expanded(
-              child: ListView.builder(
-            padding: EdgeInsets.all(10),
-            itemCount: str.length,
-            itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: taskchats(index, str[index]),
-            ),
-          )),
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.white70, borderRadius: BorderRadius.circular(25)),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  IconButton(
-                      onPressed: () {}, icon: FaIcon(FontAwesomeIcons.image)),
-                  Expanded(
-                      child: TextField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey[200],
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
+    return Column(
+      children: [
+        Expanded(
+            child: ListView.builder(
+          padding: EdgeInsets.all(10),
+          itemCount: str.length,
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: chats(index, str[index]),
+          ),
+        )),
+        Container(
+          decoration: BoxDecoration(
+              color: Colors.white70, borderRadius: BorderRadius.circular(25)),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                IconButton(
+                    onPressed: () {},
+                    icon: SvgPicture.asset("asset/gallery.svg")),
+                Expanded(
+                    child: TextField(
+                  decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xffF5F5F5),
+                      contentPadding: EdgeInsets.only(
+                          left: 15, bottom: 11, top: 11, right: 15),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          width: 0,
+                          style: BorderStyle.none,
                         ),
-                        hintText: "Type A Massege..",
-                        hintStyle: TextStyle(color: Colors.black)),
-                  )),
-                  IconButton(
-                      onPressed: () {},
-                      icon: FaIcon(
-                        FontAwesomeIcons.telegram,
-                        size: 30,
-                      )),
-                ],
-              ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      hintText: "Type A Massege..",
+                      hintStyle: TextStyle(color: Colors.black)),
+                )),
+                IconButton(
+                  onPressed: () {},
+                  icon: ShaderMask(
+                    blendMode: BlendMode.srcIn,
+                    shaderCallback: (bounds) => colorssl().createShader(bounds),
+                    child: SvgPicture.asset(
+                      "asset/endchat.svg",
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
-}
-
-Widget taskchats(int i, String msg) {
-  return i % 2 == 0
-      ? Align(
-          alignment: Alignment.centerLeft,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15),
-                      bottomRight: Radius.circular(15)),
-                  color: Colors.grey[200],
-                ),
-                child: Text(msg),
-              ),
-              Text(
-                "12:00 PM",
-                style: TextStyle(fontSize: 10),
-              )
-            ],
-          ))
-      : Align(
-          alignment: Alignment.centerRight,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15),
-                      bottomLeft: Radius.circular(15)),
-                  gradient: colorssl(),
-                ),
-                child: Text(msg),
-              ),
-              Text(
-                "12:00 PM",
-                style: TextStyle(fontSize: 10),
-              )
-            ],
-          ));
 }

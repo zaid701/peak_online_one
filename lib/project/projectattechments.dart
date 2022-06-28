@@ -29,28 +29,36 @@ class _projectattechmentState extends State<projectattechment> {
               ),
               Text(
                 "Attachments List",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
+                    color: Color(0xff666666)),
               ),
               // ignore: prefer_const_constructors
               SizedBox(
-                width: 5,
+                width: 15,
               ),
               Icon(
                 Icons.search,
                 size: 25,
+                color: Color(0xff7A7A7B),
               ),
               Spacer(),
               InkWell(
                 onTap: () => attechfilealert(),
                 child: Container(
-                  height: 17,
-                  width: 17,
+                  height: 27,
+                  width: 27,
                   decoration: BoxDecoration(
                     gradient: colorssl(),
-                    borderRadius: BorderRadius.circular(17),
+                    borderRadius: BorderRadius.circular(27),
                   ),
                   child: Center(
-                    child: FittedBox(child: Icon(Icons.add)),
+                    child: FittedBox(
+                        child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    )),
                   ),
                 ),
               ),
@@ -61,7 +69,7 @@ class _projectattechmentState extends State<projectattechment> {
                 onTap: () => attechfilealert(),
                 child: Text(
                   "Add File",
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13),
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
                 ),
               ),
 
@@ -101,11 +109,52 @@ class _projectattechmentState extends State<projectattechment> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleLeft)),
-              Text("1"),
-              IconButton(
-                  onPressed: () {}, icon: FaIcon(FontAwesomeIcons.angleRight)),
+              Container(
+                height: 35,
+                width: 35,
+                // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Color(0xff95BB65), width: 2)),
+                child: Center(
+                  child: InkWell(
+                    onTap: () {},
+                    child: FaIcon(
+                      FontAwesomeIcons.angleLeft,
+                      size: 22,
+                      color: Color(0xff95BB65),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "1",
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Container(
+                height: 35,
+                width: 35,
+                // padding: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Color(0xff95BB65), width: 2)),
+                child: Center(
+                  child: InkWell(
+                    onTap: () {},
+                    child: FaIcon(
+                      FontAwesomeIcons.angleRight,
+                      size: 22,
+                      color: Color(0xff95BB65),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
           SizedBox(
@@ -120,6 +169,7 @@ class _projectattechmentState extends State<projectattechment> {
         children: [
           SizedBox(
             width: 7,
+            height: 47,
           ),
           Icon(
             Icons.attachment_outlined,
@@ -135,10 +185,10 @@ class _projectattechmentState extends State<projectattechment> {
             children: [
               Text(
                 "Attachment : sdgf",
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
               ),
               Text("File name",
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 11)),
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12)),
             ],
           ),
           Spacer(),

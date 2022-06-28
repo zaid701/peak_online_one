@@ -35,7 +35,7 @@ class _projectaskpageState extends State<projectaskpage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Colors.white,
       appBar: appbar2(context, b[tbtask.index]),
       body: Column(
         children: [

@@ -44,7 +44,8 @@ class _createticketState extends State<createticket> {
               SizedBox(
                 height: 20,
               ),
-              Text("Select issue Type"),
+              Text("Select issue Type",
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12)),
               SizedBox(
                 height: 5,
               ),
@@ -52,7 +53,7 @@ class _createticketState extends State<createticket> {
                 padding: EdgeInsets.only(left: 20, right: 20),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.grey)),
+                    border: Border.all(color: Color(0xffCED4DA))),
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton(
                     isExpanded: true,
@@ -60,13 +61,18 @@ class _createticketState extends State<createticket> {
                     value: dropdownvalue,
 
                     // Down Arrow Icon
-                    icon: const Icon(Icons.keyboard_arrow_down),
+                    icon: const Icon(
+                      Icons.keyboard_arrow_down,
+                      color: Color(0xff495057),
+                    ),
 
                     // Array list of items
                     items: items.map((String items) {
                       return DropdownMenuItem(
                         value: items,
-                        child: Text(items),
+                        child: Text(items,
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400, fontSize: 12)),
                       );
                     }).toList(),
                     onChanged: (String? newValue) {
@@ -78,64 +84,84 @@ class _createticketState extends State<createticket> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Text("Create a Support Ticket",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                  "If you're already raised a support ticket about a  particular issue, continue the conversation here"),
+                  style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
+                      color: Color(0xff444444))),
               SizedBox(
                 height: 10,
               ),
-              Text("Subject"),
+              Text(
+                  "If you're already raised a support ticket about a  particular issue, continue the conversation here",
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12)),
               SizedBox(
-                height: 5,
+                height: 20,
+              ),
+              Text("Subject",
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12)),
+              SizedBox(
+                height: 10,
               ),
               TextField(
                 decoration: InputDecoration(
-                    fillColor: Colors.grey[200],
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+                    fillColor: Color(0xffEEEEEE),
                     filled: true,
                     hintText: "Please enter a short summary of the problem",
                     hintStyle: TextStyle(fontSize: 13),
                     border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffC6CACE)),
                         borderRadius: BorderRadius.circular(10))),
               ),
               SizedBox(
-                height: 10,
+                height: 15,
               ),
-              Text("Description"),
+              Text("Description",
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12)),
               SizedBox(
-                height: 5,
+                height: 10,
               ),
               TextField(
                 controller: textarea,
                 keyboardType: TextInputType.multiline,
                 maxLines: 7,
                 decoration: InputDecoration(
-                    fillColor: Colors.grey[200],
+                    fillColor: Color(0xffEEEEEE),
                     filled: true,
                     hintText:
                         "Please give as much details as possible, including error messages and codes and any steps. Providing any screenshots or error messages can often help us diagnose problems quicker.",
                     hintStyle: TextStyle(fontSize: 13),
                     border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffC6CACE)),
                         borderRadius: BorderRadius.circular(10))),
               ),
               SizedBox(
-                height: 10,
+                height: 15,
               ),
-              Text("Attach File"),
+              Text("Attach File",
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12)),
               SizedBox(
-                height: 5,
+                height: 10,
               ),
               TextField(
                 decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.attach_file),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+                    suffixIcon: Icon(
+                      Icons.attach_file,
+                      color: Color(0xff495057),
+                    ),
                     hintText: "Upload File",
-                    hintStyle: TextStyle(fontSize: 13),
+                    hintStyle: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12,
+                        color: Color(0xff495057)),
                     border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffC6CACE)),
                         borderRadius: BorderRadius.circular(10))),
               ),
               SizedBox(
@@ -145,10 +171,10 @@ class _createticketState extends State<createticket> {
                   child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(9),
                     gradient: colorssl()),
                 child: Text(
-                  "Update Details",
+                  "Create Ticket",
                   style: TextStyle(
                       fontWeight: FontWeight.w500, color: Colors.white),
                 ),
